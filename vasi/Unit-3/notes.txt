@@ -1,0 +1,34 @@
+Unit 3 – STL (containers, iterators and algorithms)
+20/2/23
+	STL is part of the standard library 
+	STL’s are type-safe
+		Every function should have the same interface
+	Proper Regular classes/templates
+		Expose what is required
+		Separate Implementation from interface
+		Default, copy, parameterized constructor 
+		Destructors
+		overloading
+		handle things the same way
+	Containers
+		Vectory
+		Most algos look similar : copy, find, sort, search
+		Why make the programmer think about implementation
+		Uniform access to data
+	Independent of how it’s stored and type
+	Generic Programming = “Lifting the algorithm” = concrete to abstract 
+	++++S is valid (S++++ is not valid)
+	Inline good
+	Algorithms must be/look common. A sort algorithm must be applicable to a list, vector, etc.
+	Mix (Marry) concepts: containers and algos
+	Wedding guy -> Iterators
+21/2/23
+	Pairs : 
+	pair<string,int> person = make_pair(“Y”,24)
+	Allocators : better than new, used specifically for containers. Creates more memory than malloc/calloc in hopes that the users asks for memory again
+	vector<int,allocator<int>> v(10);
+	Goal of STL is efficiency
+	STL assumes the programmer is smart, doesn’t check for out of bounds, type etc
+	STL’s don’t have virtual functions. Their addresses are stored in a table somewhere else
+	 
+
