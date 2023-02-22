@@ -1,4 +1,4 @@
-- If a class derived is public, then it doesn't matter if the base class is private or public, it would be able to access it.
+- ~~If a class derived is public, then it doesn't matter if the base class is private or public, it would be able to access it~~. (This it totally wrong)
 
 ```cpp
 #include <iostream>

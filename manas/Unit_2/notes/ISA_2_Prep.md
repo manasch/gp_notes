@@ -21,6 +21,8 @@ int main() {
 
 - This still works and gives an output. You get "Hel" for both.
 
+---
+
 ```cpp
 template<typename T>
 class C{
@@ -238,8 +240,204 @@ int main() {
 
 ---
 
-- Templatized inheritance for some reason requires you to call derived methods using `this` keyword.
+- ~~Templatized inheritance for some reason requires you to call derived methods using `this` keyword.~~
 - The methods in the parent class need to be brought to scope
     - Implicit by using `this`
-    - Bring it in scope `using Base<T>::func
-    - Fully qualify `Base<T>::func()
+    - Bring it in scope `using Base<T>::func`
+    - Fully qualify `Base<T>::func()`
+
+- The derived class can have more templates than the base class, but not the other way around.
+- If base class is specialized, needs to be fully scoped. (??)
+
+---
+
+##### Inherting from a template
+
+- Can inherit from a template as well provided that it is a class type.
+
+```cpp
+class Waypoint
+{
+ public:
+  Waypoint(float lat = 8.0, float lon = 0.0) : latitude(lat), longitude(lon) {}
+  void display() {
+    cout << "Latitude: " << latitude << ", Longitude: " << longitude << endl;
+  }
+
+ private:
+  float longitude;
+  float latitude;
+};
+
+template <typename T>
+class Named : public T // <------ Notice this, it's not Waypoint<T>
+{
+ public:
+  Named(const char* str) : name(str) {}
+  void display() {
+    cout << "Name: " << name << ", ";
+    T::display();
+  }
+
+ private:
+  string name;
+};
+```
+
+- Derived class can be a template class while the parent is a non-template class.
+
+Non-dependent base
+
+```cpp
+template <typename T>
+class Derived: public Base<double> // <--- It's not Base<T>
+```
+
+- If `virtual` isn't used, only the base method reference is available.
+```cpp
+#include<iostream>
+using namespace std;
+template <typename T>
+class Base {
+ public:
+  void foo() { std::cout << "Base" << std::endl; }
+};
+
+template <typename T>
+class Derived : public Base<T> {
+ public:
+  void foo() { std::cout << "Derived" << std::endl; }
+};
+
+int main() {
+  Base<int>* p = new Derived<int>();
+  p->foo(); 
+  return 0;
+}
+```
+
+```bash
+This gives: Base
+```
+
+```cpp
+#include<iostream>
+using namespace std;
+template <typename T>
+class Base {
+ public:
+  virtual void foo() { std::cout << "Base" << std::endl; }
+};
+
+template <typename T>
+class Derived : public Base<T> {
+ public:
+  virtual void foo() { std::cout << "Derived" << std::endl; }
+};
+
+int main() {
+  Base<int>* p = new Derived<int>();
+  p->foo(); 
+  return 0;
+}
+```
+
+```bash
+This gives: Derived
+```
+
+---
+
+##### Constructors
+
+```cpp
+#include <iostream>
+#include <vector>
+// Here is an example of what happens if we dont 
+// explcitily destroy children
+
+class Person {
+public:
+    Person(const std::string& name) : name(name) {}
+    ~Person() {
+        std::cout << name << " died." << std::endl;
+    }
+    std::string name;
+};
+
+class House {
+public:
+    House(const std::string& address) : address(address) {}
+    ~House() {
+        std::cout << "House at " << address << " was destroyed." << std::endl;
+    }
+    std::string address;
+};
+
+class Town {
+public:
+    Town() {
+        std::cout << "Town was created." << std::endl;
+    }
+    ~Town() {
+        std::cout << "Town was destroyed." << std::endl;
+    }
+    void add_person(Person* person) {
+        people.push_back(person);
+    }
+    void add_house(House* house) {
+        houses.push_back(house);
+    }
+private:
+    std::vector<Person*> people;
+    std::vector<House*> houses;
+};
+
+int main() {
+    std::cout << "Entering main." << std::endl;
+    Town* town = new Town();
+    town->add_person(new Person("John"));
+    town->add_house(new House("123 Main St."));
+    delete town;
+    std::cout << "Leaving main." << std::endl;
+    return 0;
+}
+```
+
+- This one doesn't print a person dies or house destroyed.
+- Can delegate this work to shared pointer, which will call the destructor.
+
+- Shallow Copy: If the value is changes in the og, it changes in the new one as well
+- Deep Copy: If the value changes in the og, it doesn't change in the new one.
+- By default, copy is shallow.
+
+
+---
+
+##### Some Header
+
+- Can't initialize a static member in-class.
+
+---
+
+##### ISA 2 Prep
+
+```cpp
+#include <iostream>
+
+template <typename T>
+class MyClass {
+ private:
+  static T instance;
+
+ public:
+  static T& getInstance() {
+    return instance;
+  }
+};
+
+template <typename T>
+T MyClass<T>::instance;
+```
+
+- Need to have an instance because it is static.
