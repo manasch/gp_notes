@@ -524,3 +524,27 @@ T MyClass<T>::instance;
 ```
 
 - Need to have an instance because it is static.
+
+- When passing a function to a template, it doesn't matter where the function is declared
+```cpp
+#include<iostream>
+template <typename T, T (*Func)(T)> //! [1] Fails here
+class MyTemplateClass {
+public:
+  T getValue(T value) { 
+    return Func(value); //![2] Fails here
+  }
+};
+//![3] should have defined ahead
+int square(int x) { 
+  return x * x;
+}
+int main() { 
+    MyTemplateClass<int, square> a;
+    cout << a.getValue(3);
+}
+//! Which of the above statements are WRONG
+
+```
+
+- There is no error and this runs fine.
