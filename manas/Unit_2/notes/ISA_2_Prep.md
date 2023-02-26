@@ -411,8 +411,91 @@ int main() {
 - Deep Copy: If the value changes in the og, it doesn't change in the new one.
 - By default, copy is shallow.
 
+---
+
+##### Friends
+
+- If a class declares another class as a friend, in `public` or `private`, the friend class can access this class' private members.
+- If `A` considers `B` as a friend, and `B` considers `C` as a friend, `A` doesn't consider `C` a friend directly, that is `C` can't access `A` private members directly, but only with the help of `B`
+- Template friends need to be defined before.
+- Can define friend to be itself, if need other template type.
+```cpp
+// Specify all instances of B are friends of A
+template <typename T>
+class A {
+    private:
+        int x;
+    public:
+        A(T x) : x(x) {}
+        template <typename U>
+        friend class B;
+}
+```
+- If a primary template is a friend, then even the explicit and partial specialization are also friends.
+- Can make a template parameter as a friend, if wrong it is ignored
+```cpp
+template<typename T>
+class Box {
+    public:
+    friend T;
+.
+.
+int main() {
+    Box<Apple> box;
+    box.set();
+    Apple a;
+    a.func(box);
+    // This is ignored 
+    Box<int> boxy;
+    boxy.set();
+    return 0;
+}
+```
+
+- Other functions can also be declared as friends. Gotta specify the parameter properly.
 
 ---
+
+##### Nested Classes
+
+-  Outer class can't access inner class' private members, inner class can access outer class' private members if you pass the instance of the outer class to the inner class.
+- Inner classes can also have a life of their own, just gotta fully qualify it.
+```cpp
+    Outer::Inner1 inner1;
+    inner1.value1 = 42;
+    inner1.printValue1();
+```
+- Templatized nested classes are also possible.
+
+---
+
+##### Dependent v Non-Dependent
+
+- Non-Dependent datatypes are those which are not dependent on the template type.
+- These are known at compile time.
+- `using x = y`, Have to use `typename`. Basically when using aliases.
+- Have to specify when a funcition is a template
+```cpp
+template <typename T>
+struct base_parser
+{
+   template <typename U>
+   void init()
+   {
+      std::cout << "init\n";
+   }
+};
+template <typename T>
+struct parser : base_parser<T>
+{
+    void parse() {
+        base_parser<T>::template init<int>();
+        std::cout << "parser\n";
+    }
+}
+```
+
+- ---
 
 ##### Some Header
 
