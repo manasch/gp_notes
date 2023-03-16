@@ -73,6 +73,18 @@ Just mentioning v2.begin() was throwing an error;
 list
 `merge()`- Requires list to be sorted.
 
+##### Vectors
+
+- If objects passed to a vector, it is pass by value by default.
+- To change this behaviour, make it pass by reference.
+- If a vector is of base class type, and it holds derived class objects, then the objects begin to behave as base class. To change this behaviour, pass it by reference.
+- But if a base class pointer is poined to a derived class object, with the derived class overriding a function from the base class, it will use the derived class function.
+
+##### Maps
+
+- When using `[]` it will replace the existing value with the new value.
+- When using `.insert({first, second})` it will just ignore the new value.
+
 ---
 
 ### Associative Containers
@@ -137,3 +149,10 @@ itr = itr + 3;
 ```cpp
 for_each(v.begin(), v.end(), addOne{})
 ```
+
+---
+
+#### type-traits
+
+- Compile time template metafunctions.
+- Useful in conditional compiliation
