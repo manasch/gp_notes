@@ -203,3 +203,59 @@ When variadic templates are used. It should be expanded again by using `...`
 ---
 
 Refer to [class_6](./class_6.md) notes for type erasure.
+
+
+---
+
+Forgot something
+
+std::function allows you to store a free function pointers
+
+```cpp
+void my_func(int x) {...}
+
+std::function<void(int)> fp;
+```
+
+void is the return type and int is the parameter type.
+
+
+Mixin: Upside down of CRTP, they inherit from the classes that they are supposed to add functionality to.
+
+---
+
+CRTP identify:
+
+```cpp
+// base class
+
+template<typename Derived>
+struct base {
+    void some_func() {...}
+};
+
+struct derived : public base<derived> // here you specialize the class you're trying to define itself. {
+    void func() {...} // some_func will call this.
+}
+```
+
+Mixin identify:
+
+```cpp
+// They are the exact opposite of CRPT, the child class derived from the class they are supposed to define the functionality of.
+
+struct t1
+{
+    ...
+}
+
+struct t2
+{
+    ...
+}
+
+template<typename T> // T could be t1 or t2
+struct mix : T {
+    // Define common functionality
+}
+```
