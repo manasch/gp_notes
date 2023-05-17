@@ -1,7 +1,7 @@
 # Unit - 1
 ---
 
-#### Introduction
+### Introduction
 ---
 
 What does this do ?
@@ -67,4 +67,169 @@ class Shape {
 > `Currying` refers to partial application of a function.
 
 ---
+
+### Something
+
+- Initialization:
+	- Copy
+	- Direct
+	- Uniform
+
+```cpp
+int a(10); // Direct
+int b = 10; // Copy
+int c[5] = {1, 2, 3, 4}; // Uniform
+```
+
+Copy creates new mem block, direct uses a reference to point to the prev memor
+
+- Promotions:
+
+Integer promotion: Integral to int, `char, signed char, unsigned char, short, unsigned short` all to `int`
+Floating promotion: `float` to `double`
+Standard or numeric conversions
+Pointer conversion: Pointer to derived can be converted implicitly to pointer to its base
+
+---
+
+### Functions
+
+Matching parameters
+
+- Trivial conversions:
+	- Array to pointer
+	- Function pointer conversionV
+	- Variable/pointer to const
+- Integral: Refer [here](#Something)
+- Floating: Refer [here](#Something)
+- Standard: Integral to int, floating to double (basically the above two)
+
+Unsafe conversion:
+	Pointer to Pointer (int to double)
+
+User defined conversion
+```cpp
+#include <iostream>
+
+using namespace std;
+
+class Time {
+    int hour, min;
+    public:
+        Time(int t) {
+            hour = t / 60;
+            min = t % 60;
+        }
+
+        void display() {
+            cout << hour << ":" << min;
+        }
+};
+
+int main() {
+    // Time T1(95);
+    int dur = 95;
+
+    Time t = dur;
+    t.display();
+
+    return 0;
+}
+```
+
+Prints: `1:35`
+
+---
+
+### Something - 2
+
+> If the result of an operation is in the variable of a programmer then it is l-value
+
+```cpp
+++a; // No temporary, L-value
+a++; // Requires a temporary, R-value
+```
+
+- Void pointers can point to any data type and hence need to be type casted for use.
+
+```cpp
+void swap(void* a, void* b, size_t size) {
+    char temp[size];
+    memcpy(temp, a, size);
+    memcpy(a, b, size);
+    memcpy(b, temp, size);
+}
+```
+
+- Requires the size to be passed as well.
+
+### Templates
+---
+
+They can be of three types
+1. Type template: `template<typename T>`
+2. Non-type template: `template<int m>`
+3. Template-Template: `template<template<typename T>>`
+
+Ex:
+```cpp
+template<typename T>
+void foo(T t) {
+	// Generic implmenetation
+}
+
+template<class T1, class T2>
+class MyClass {
+	public:
+		void foo() {
+			// Generic implmentation
+		}
+};
+
+template<>
+void foo<int>(int t) {
+	// Fully specialized implmentation for int
+}
+
+template<class T>
+class MyClass<T, int> {
+	public:
+		void foo() {
+			// Partial specialized for T, int
+		}
+}
+```
+
+```cpp
+#include<iostream>
+using namespace std;
+template <typename T>
+T max(T lhs,T rhs) {
+    cout << "T\n";
+    return (lhs > rhs)? lhs : rhs;
+}
+double max(double lhs, double rhs) {
+    cout << "Fun\n";
+    return (lhs > rhs)? lhs : rhs;
+}
+
+int main() {
+    ::max(10.5f, 5.5f); //  (1)
+    ::max(10.5, 5.5);   // (2)
+}
+```
+
+- When a template exists for the specific type, it chooses to instantiate a template rather than promote to the nearest available type.
+
+- Explicit instantiation is when you give the compiler hints on what the template parameter should be during the call itself.
+```cpp
+template<typename T>
+T myFunc(const T&p) {
+	// implementation
+}
+
+int main() {
+	auto res = myFunc<int>(10); // Explicitly instantiating for int. Type conversion also would occur here if required.
+}
+```
 
