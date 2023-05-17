@@ -1,0 +1,284 @@
+Sorting : generic algorithm
+
+Exercise 5
+list : generic data structure
+
+#include <iostream>
+using namespace std;
+struct Node { 
+   int data; 
+   struct Node *next; 
+}; 
+struct Node* head = NULL;   
+void insert(int new_data) { 
+   struct Node* new_node = (struct Node*) malloc(sizeof(struct Node)); 
+   new_node->data = new_data; 
+   new_node->next = head; 
+   head = new_node; 
+} 
+void display() { 
+   struct Node* ptr;
+   ptr = head;
+   while (ptr != NULL) { 
+      cout<< ptr->data <<" "; 
+      ptr = ptr->next; 
+   } 
+} 
+int main() { 
+   insert(3);
+   insert(1);
+   insert(7);
+   insert(2);
+   insert(9);
+   cout<<"The linked list is: ";
+   display(); 
+  return 0; 
+}
+
+So you can implement lists as arrays, linked lists etc.
+if you had a search function that needs to be implmented agnostic of the implementation what would you?
+
+------------------
+paradigms in programming:
+1. procedural - earlier called sub-routines , now called function; break the problem into smaller chunks
+2. object based 
+	class : mechanism to make our own type
+			representation of an entity - real or unreal
+
+			can all entities be represented?
+
+			user defined type - is struct a user defined data type
+
+			is enum a class
+--------------------------------------------------------------------------------
+			what is the output of this program
+
+			#include <iostream>
+			using namespace std;
+
+			enum week { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+
+			int main()
+			{
+    			week today;
+    			today = Wednesday;
+    			cout << "Day " << today+1;
+    			return 0;
+			}
+----------------------------------------------------
+Can I change the default value of enum 
+#include <iostream>
+using namespace std;
+
+enum seasons { spring = 34, summer = 4, autumn = 9, winter = 32};
+--------------------------------------------------------------------
+
+
+
+			pure type : what we can do? does not say how we do it
+			class : what as well as how
+			type : set of values and set of operations
+	       		operation : what and not how
+
+	       		interface and implementation
+			C++ has header and .ccp files for separating the interface from the implementation. 
+
+			The header files declare "what" a class (or whatever is being implemented) will do, ie the API of the class
+			The cpp file on the other hand defines "how" it will perform those features, ie, the implementation of these declared functionality
+			but why?
+
+				Maintainable
+				reduces compile times and the amount of recompilation needed when you change the implementation.meaning client code
+				remain untouched
+				can the interface and implementation be in different classes *** Warning experimental feature **
+
+
+			object : variable of class type
+
+			what is the difference between a class and a struct in c++
+-------------------------------------------------------------------------------------------------------
+			I got a B grade for including cpp files instead of using header files why? 
+
+			The idea behind this is that functions and class/struct member functions are compiled and assembled once
+			then other functions can call that code from one place without making duplicates. 
+			Your functions are declared as "extern" implicitly
+			
+			/* Function declaration, usually found in headers. */
+			/* Implicitly 'extern', i.e the symbol is visible everywhere, not just locally.*/
+			int add(int, int);
+
+			/* function body, or function definition. */
+			int add(int a, int b) 
+			{
+   			return a + b;
+			}
+
+
+	- abstraction
+	- encapsulation
+	- composition
+3. object oriented 
+	- abstraction
+	- encapsulation
+	- composition
+	- inheritance
+	- polymorphism
+4. generic programming
+	- generic algorithms and generic data structures
+
+5. functional programming
+
+	Pure Functions: These functions have two main properties.
+	 First, they always produce the same output for the same arguments irrespective of anything else.
+	 Secondly, they have no side-effects i.e. they do modify any argument or global variables or output something.
+	
+	Recursion: There are no “for” or “while” loop in functional languages. Iteration in functional languages is implemented through recursion.
+	
+	Functions are First-Class and can be Higher-Order: 
+	First-class functions are treated as first-class variable. 
+		The first-class variables can be passed to functions as a parameter, 
+		can be returned from functions or
+	        stored in data structures.
+	Variables are Immutable: In functional programming, we can’t modify a variable after it’s been initialized. 
+	We can create new variables – but we can’t modify existing variables.
+		
+	- math concept : pure
+		arguments immutable
+	- pure, re-entrant, thread safe ?
+	- currying?
+	 Curried objects are closely related to functions. 
+	 In fact, the word “currying” essentially means partial application of a function
+
+
+	 
+	 void drawAt(float x, float y, float z)
+	{
+    	std::cout << x << ',' << y << ',' << z << '\n';
+	}
+
+	drawAt(1, 0, 0);
+	drawAt(0, 1, 0);
+	drawAt(-1, 0, 0);
+	drawAt(0, -1, 0);
+
+        auto drawInPlaneAt = [](float x, float y){ drawAt(x, y, 0); };
+
+	drawInPlaneAt(1, 0);
+	drawInPlaneAt(0, 1);
+	drawInPlaneAt(-1, 0);
+	drawInPlaneAt(0, -1);
+
+
+
+
+	- may want to check : ranges C++ 20
+6. logic programming
+--------------------------------------------------------------------
+Every man is mortal
+Aristotle is a man
+
+Therefore: Aristotle is mortal
+
+
+C++ :
+- programming language
+- features:
+	procedural
+	generic programming
+	functional features: 
+
+		lambda
+
+		C++11
+		C++ Lambda expression allows us to define anonymous function objects (functors) which can either be 
+			used inline or 
+			passed as an argument.
+			#include<iostream> 
+			using namespace std; 
+			void test2(void (*test)(string,int)) 
+			{ 
+			test("Raja",2); 
+			} 
+			int main() 
+			{ 
+			auto test1=[](string name,int a){cout<<"Hello "<<name<<a<<endl;}; 
+			test1("atif",1); 
+			test2(test1); 
+			return 0; 
+			}
+		Are Lamdas pure - no side effects ? 	
+
+
+
+		functors
+		A C++ functor (function object) is a class or struct object that can be called like a function
+		class Greet {
+  			public:
+   			 void operator()() {
+      			// function body
+    			}
+		};
+
+		// create an instance of Greet
+		Greet greet;
+
+		// call the object as a function
+		greet(); 
+
+	supports various levels of abstraction
+- multiparadigm language
+- multiple abstraction
+- type safety
+- efficiency
+
+1983 C++
+1998 C++ 98
+2003 C++ TR1
+2011 C++ 11
+2014 C++ 14
+2017 C++ 17
+2020 C++ 20
+
+----------------------------------------------------------------
+
+abstraction:
+- cheque in a bank
+	attributes:
+		ac no
+		cheque #
+		amt
+		payee's name
+		bank
+		branch
+		date
+		
+		size of the cheque
+		colour - bg and fg
+		quality of paper
+		font  :size, style
+		
+	behaviour:
+		deposit
+		withdraw
+		transfer
+		write
+		bounce
+		stop payment
+		
+printer's cheque
+banker's cheque	
+same entity looks different based on how we look at it - abstraction
+
+
+
+
+
+
+
+
+
+
+
+	
+	       
+

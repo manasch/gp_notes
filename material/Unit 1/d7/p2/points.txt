@@ -1,0 +1,74 @@
+queries:
+
+pointer to pointer - eg: int **p;
+pointer to reference - eg: int& (*p);
+//*p=20 throws error. *p is a reference, which is constant.
+reference to reference - eg: int& (&r);
+//r=20 throws error. *r is a reference, which is constant.
+reference to pointer - eg: int* (&r);
+array of pointers - eg: int* (a[SIZE]);
+array of references - eg: int &(a[SIZE]);
+
+ans: we can create 
+pointer to a pointer
+reference to a  pointer
+	int a(10);
+	int* p(&a);
+	int* &r(p)
+	
+pointer to a reference : not possible
+reference to reference : not possible
+&& : this different
+& & : not meaningful
+------------------------------------
+
+--
+    what are the casting rules for pointers in C and C++?
+    ans: casting
+    static_cast<type>(expr)
+    const_cast<type>(expr)
+    	deemed const
+    	manifest const
+    dynamic_cast<type>(expr)
+    reinterpret_cast<type>(expr)
+    
+    in the object file, why does the order of functions show up differently (when probing the object file using the nm command) from the original order they appeared in, inside the translation unit?
+    ans:undefined
+    
+    what are the benefits and drawbacks of pass-by-name parameter passing which was a feature of Algol and Tcl?
+    ans: access earlier activation
+     
+------------
+significance T and W
+where do template functions reside?
+'S0_'?
+-----------
+   when we created a local declaration of the function void f(char) in the main-function, then did the compiler forget all global declarations/definitions of function f only, or for other functions as well?
+   ans: only f
+        For example, if we had another function called void abc(int) in the global space and a local declaration of void f(char) in the main-function, then would void abc(int) be forgotten, by the compiler, in the main-function, because of the local declaration of void f(char) in the main-function?
+    Why is the conversion of int to any floating-point type not considered as type promotion? As in the case of double, it is a type with a wider range and size while for float, it is a type with the same size as int but has a wider range due to its representation format.
+  ans: int : exact representation
+  		float value : approximately stored
+  		  
+---------------
+day 8:  20th Jan 2021
+so far,
+function:
+prototype
+matching of arg to para
+overloading
+template
+-----------
+
+template instantiation results in overloading
+algorithms are same : templates
+algorithms are different : overloading
+
+two ways of instantiation:
+a) implicit 
+b) explicit
+
+
+
+
+

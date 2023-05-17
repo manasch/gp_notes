@@ -1,0 +1,1 @@
+#define cal(op,x) ((x) op (x))

@@ -62,5 +62,9 @@ class Shape {
 ```
 
 - Pure functions is a function that doesn't modify any variable or state outside it's own scope, to declare a function pure, it can have `const`.
+- Lambda functions are not pure
 
 > `Currying` refers to partial application of a function.
+
+---
+

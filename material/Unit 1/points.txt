@@ -1,0 +1,54 @@
+day 5: 16th Jan 2021
+queries:
+    would a static variable be an example of, "A variable with a lifetime but with no scope", after its purpose has been fulfilled in the program? 
+        For example, if a function contains a static variable, then once that function is not used any further in the program (i.e. no more calls to that function), the static variable is still in memory, but not accessible.
+        
+     answer later
+    
+       
+        
+    what is meant by "A variable can be in multiple places at the same time?"
+	memory, cache, register
+	cache of multiple processor
+
+-----------------------------------------------
+
+so far we have discussed:
+- concept constants and variables
+- attributes of variable:
+	name:
+	location
+	type
+	value
+		create  a variable only when we know how to initialize
+	size :
+		C++ : depends on the implementation
+			find using sizeof
+		Java : sizes are fixed by the language
+	scope : visibility
+	intent : make a variable only when required
+			 make the variable name meaningful
+			 // refer : CleanCode  : Robert Martin
+	life time : existence
+	storage class
+		automatic	: no keyword auto for this in C++ 11
+							onwards
+		global
+		static
+		extern
+		
+----------------------
+variable:
+	declaration : indicates the type; only for the compiler
+	definition : causes allocation of memory
+		definition is also a declaration
+	initialization : putting a value to a variable at the point of definition
+		more efficient
+		not an expression
+		RAII : Resource acquisition is initialization
+	assignment : putting a value to a variable anywhere else
+	
+	
+	
+	
+		

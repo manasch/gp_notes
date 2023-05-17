@@ -1,0 +1,83 @@
+day 6 : 18th Jan 2021
+query:
+why 
+#include <iostream> and not <iostream.h>?
+
+iostream.h : all names introduced globally
+iostream : all names introduced in a wrapper
+- namespace - this namespace called std
+
+to use any C header file with namespace concept, prefix c to the name
+#include <math.h> => #include <cmath>
+
+
+
+so far,
+variables and functions
+function prototype
+
+prototype or function declaration or signature:
+1. match arguments to parameters
+	#, type and/or order
+2. overloading
+3. default parameters
+
+---------------
+
+argument to parameter matching:
+1. exact match or trivial conversion
+   array => pointer
+   variable => const
+   derived class object => base class object
+   
+2. generic function
+
+3. promotion
+	int and double are preferred integral and
+	float types respectively
+	conversion of integral types  to int
+	float types to double 
+	without loss of precision
+	
+	2.0 => 2 std conversion
+	
+4. std conversion
+	numeric conversion
+	not pointer convertion
+	no ranking 
+	
+5. user defined conversions
+	single argument constructor
+	type conversion operator
+	
+6. type unsafe conversions
+	pointer => void*
+	variable number of arg
+	
+------------------------------------
+
+overloading:
+- compile time mechanism
+- more than one function has the same name
+- names are mangled or decorated by the compiler
+- linker is agnostic to overloading concept
+- names should be unique to the linker
+- mangling is compiler dependent
+- has to be in the same scope
+- same abstraction; but different implementation
+
+------------------------------------
+template function:
+- compile time mechanism
+- results in a set of overloaded functions
+------------------------------------
+use :
+https://cppinsights.io/
+
+
+
+			
+
+
+   
+

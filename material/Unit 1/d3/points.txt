@@ -1,0 +1,94 @@
+
+- functional programming
+  C : functional ? NO
+- C : object oriented ?
+  directly no
+  implement OO concepts as a design pattern in 'C'
+
+----------------------------------------------------
+Object Oriented concepts:
+Interface and implementation:
+Interface, once published, cannot be withdrawn
+withdrawing will break the existing code
+becomes a maintenance nightmare
+
+What should a search return in a list?
+	T/F
+	Pointer
+	Index
+	Value
+
+My current implementaion is array , what if I change it to linked list
+How to replace after search 
+
+Iterator
+Iterators are the result of the generalization of the concept of a pointer.
+They can be used to iterate over the elements of a container and provide access to the individual elements
+Like a pointer
+they can be const or reversed direction as well.
+iterators can be incremented or decremented which makes them suitable for loops.
+While we are using pointers to hold a memory address, whatever memory address.
+An iterator is always used with containers
+An iterator is used to go through the elements of a container and the items of the container don’t need to be stored on a contagious memory area. 
+
+input iterators
+output iterators
+forward iterators
+bidirectional iterators
+random access iterators
+
+When not to use an iterator
+
+Range based loops
+C style arrays
+
+DO NOT USE POINTERS FOR ITERATORS
+
+
+The main advantage of an iterator is to provide a common interface for all the containers type.
+
+Iterators make the algorithm independent of the type of the container used.
+
+Iterators provide a generic approach to navigate through the elements of a container.
+
+Iterators can be smart pointers which allow to iterate over the complex data structures.
+
+#include <iostream>  
+#include<iterator>  
+#include<vector>  
+using namespace std;  
+int main()  
+{  
+   std::vector<int> v{1,2,3,4,5};  
+   vector<int>::iterator itr;  
+   for(itr=v.begin();itr!=v.end();itr++)  
+   {  
+       std::cout << *itr <<" ";  
+   }  
+    return 0;  
+}  
+
+
+1. Abstraction :
+	selecting what is essential
+	ignoring what is not essential
+	depends on the observer
+	
+	also give a name for it
+	
+2. encapsulation :
+	put things together
+	put attributes and behaviour together
+	
+	hide what could change
+	expose what should not change
+	
+	hide the implementation
+	expose the interface
+	
+	not a security concept
+	
+3. 
+	
+	
+

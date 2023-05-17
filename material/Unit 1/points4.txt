@@ -1,0 +1,105 @@
+so far we have discussed:
+- different paradigms
+- object oriented paradigm
+  features of an object oriented language
+  	abstraction
+  	encapsulation
+  	...
+-------------------------------------
+
+composition: an attribute of a class is an object
+of another class
+object within an object
+embedding or layering or containment or aggregation
+reuse mechanism
+-------------------------------------
+
+- concept constants and variables
+- attributes of variable:
+	name:
+		no name ? 
+		temporarily variables : no name; cannot be
+			accessed
+		dynamic variables : no name; access thro
+			a pointer
+	location
+		data segment; stack; heap
+		// totally compiled lang : C++, Java, ...
+		//	type : compile time mechanism
+		//	value : runtime mechanism
+	type
+		set of values
+		set of operations
+	value
+		initial  value?
+			depends on storage class
+			data segment : initialized to 0
+				variables are mapped to 0 filled pages	
+				do not initialize each variable separately
+			others : not initialized
+			using an uninitialized variable : undefined
+				behaviour
+		variable is used uninitialized?
+		create  a variable only when we know how to initialize
+	size :
+		C++ : depends on the implementation
+			find using sizeof
+		Java : sizes are fixed by the language
+		
+		int a = 10; int b;
+		b = sizeof(a = 20);
+		// sizeof(int) //  expr of sizeof is not 
+		//				converted to machine code
+		//				not evaluated
+		
+		// a : 10
+		// b : sizeof(int)
+		// C++ : compile time table lookup
+		
+			
+	scope : visibility
+	
+	intent : make a variable only when required
+			 make the variable name meaningful
+			 // refer : CleanCode  : Robert Martin
+			 	
+	life time : existence
+	
+	storage class
+		automatic	: no keyword auto for this in C++ 11
+							onwards
+		global
+		static
+		extern
+		
+	int a = 10; // on the data segment; global variable
+	// life time : throughout the program
+	void foo()
+	{
+		// global variable a
+		printf("%d\n", a); // 10
+	}
+	void bar()
+	{
+		int a = 20; // local a; automatic variable
+		// on the stack
+		// global variable is masked off
+		// hole-in-scope for the global variable
+		printf("%d\n", a); // 20
+		printf("%d\n", ::a); // 10; global variable
+	}
+	
+	int b = 5;
+	{
+		int b = 10;
+		{
+			int b = 20;
+			// local b ; value 20
+			// global b; ::b ; value 5
+			// can never access variable of the 
+			//	outer block
+		}
+	}
+	
+	check: definite assignment rule : Java
+	
