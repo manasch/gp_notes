@@ -171,6 +171,9 @@ They can be of three types
 2. Non-type template: `template<int m>`
 3. Template-Template: `template<template<typename T>>`
 
+Specialization
+> Functions can't be partially specialized.
+
 Ex:
 ```cpp
 template<typename T>
@@ -233,3 +236,69 @@ int main() {
 }
 ```
 
+> `int * &ref = ptr` is valid and `int & *ptr1 = ptr` is invalid.
+
+### Template Arguements
+---
+
+- Default arguements
+	- Class template, if default mentioned, all subsequent must be default as well.
+	- Not the same for a function template. (but it doesn't work)
+	- Not allowed in declarations of friend templates, or in explicit specialization of a function template.
+
+Can have cascading defaults
+```cpp
+template<typename T, typename U = double> struct foo;
+template<typename T = int, typename U> struct foo;
+template<typename T, typename U> struct foo;
+```
+
+- The template arg type can also be inferred by the arguements passed. (for functions)
+```cpp
+template<typename T, typename U>
+void add(T a, T b) {
+	return a + b;
+}
+
+int main() {
+	add(1, 2);
+	add<double, int>(3.14, 2);
+}
+```
+
+- Similarly it can be explicit and derived too
+```cpp
+template<typename T, int size>
+void print_array() {};
+
+int main() {
+	int arr[] = {1, 2, 3, 4};
+	print_array(arr);
+	// or
+	print_array<int, 4>(arr);
+}
+```
+
+> Overloaded resolution ignores function template specialization, therefore the order matter.
+
+```cpp
+template<typename T>
+void func(T) {
+	//
+}
+
+template<typename T>
+void func(T*) {
+	//
+}
+
+template<> // function specialization don't have to do func<int> unlike for classes / structs
+void func(T *) {
+	//
+}
+
+int main() {
+	int *p;
+	func(p); // takes the specialization, but if the overloaded func was below the specialized one, then it would take the overloaded one.
+}
+```
