@@ -302,3 +302,93 @@ int main() {
 	func(p); // takes the specialization, but if the overloaded func was below the specialized one, then it would take the overloaded one.
 }
 ```
+
+---
+---
+
+# Unit - 2
+---
+
+### Instantiation
+
+- Templates follow lazy instantiation, any methods in a class or struct isn't instantiated until and unless they are actually used.
+
+```cpp
+template<typename T>
+class C{
+  public:
+  	C(T);
+};
+
+void candidate(C<double>);
+void candidate(int) {};
+void candidate(double) {};
+
+int main() {
+  candidate(41);
+  //candidate(4.2);
+  return 0;
+}
+```
+
+- Here, `candidate(C<double>)` isn't even being used but the `double` for C is instantiated anyways.
+
+- The compiler implicitly instantiates a class template that contains static members, those static members are not implicitly instantiated.
+- It only instantiates the static member when it requires the static member definition.
+
+> Static members / vars can't be defined within the class they have to done outside
+
+```cpp
+template<typename T>
+class MyClass {
+	static int counter;
+	MyClass() {
+		++counter;
+	}
+};
+
+// Probably because each static member needs a unique definition
+template<typename T>
+int MyClass<T>::counter = 0;
+
+// but if the static var is const, only then it can be instantiated inside
+
+template<typename T>
+class MyClass {
+	static const int count = 10;
+	//
+};
+```
+
+- Here the static member for int isn't instantiated as it isn't used.
+```cpp
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class MyClass {
+public:
+    static int my_static_member;
+};
+
+template <typename T>
+int MyClass<T>::my_static_member = 42;
+
+int main() {
+    MyClass<int> obj;
+    
+    cout << MyClass<double>::my_static_member << endl;
+}
+```
+
+> Even variables can be templateized
+
+```cpp
+template<class T>
+constexpr T pi = T(3.141592);
+```
+
+---
+
+### Inheritance
+
