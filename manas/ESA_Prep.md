@@ -460,3 +460,214 @@ class Derived : public T {
 ```
 
 > Templatized derived class can inherit for a non-templatized base class
+
+---
+
+### Composition and Constructors
+
+> Composed classes should manually delete the data it is composed of with the help of the destructor, as upon the deletion of the main class, the composed classes destructor don't get called.
+
+> Can also delegate the destructor part to a shared_ptr which will take care of it for you.
+
+```cpp
+    std::vector<std::shared_ptr<Person>> people;
+    std::vector<std::shared_ptr<House>> houses;
+```
+
+Shallow vs Deep copy constructor
+
+```cpp
+  C(const C &obj) {
+    x = obj.x;
+    std::cout << "Shallow Copy Constructor called" << std::endl;
+  }
+
+  C(const C &obj) {
+    x = new int;
+    *x = *obj.x;
+    std::cout << "Deep Copy Constructor called" << std::endl;
+  }
+```
+
+---
+
+### Template and Friends
+
+- If a class declares something as a friend, it can access that specific class' private members.
+- A friend of a friend can't access the main guy's class. {A -> B -> C} C can't access A's private member.
+- Though if C inherits from B, it can access A's private members.
+- A friend template class must be defined.
+- Can have the same class be it's own friend to access private members of the same class but different instances.
+- If a template is a friend, then even it's specializations are considered friends.
+- A template parameter can also be made a friend as long as it's a valid type.
+```cpp
+template<typename T>
+class Box {
+    public:
+    friend T;
+    void set() { this->data = 10;}
+    private:
+   
+    int data;
+};
+
+class Apple {
+public:
+    void func(Box<Apple> &box) {
+        // Access private data member of Box
+        cout << box.data << endl;
+    }
+};
+```
+
+class friends:
+```cpp
+friend class B<T>;
+
+template<typename T>
+friend class B;
+```
+
+function friends:
+```cpp
+friend void func<>();
+```
+
+### Templates and Nested Classes
+---
+
+- Outer class can't access inner class' private members, inner class can access outer class' private members if you pass the instance of the outer class to the inner class.
+- Inner classes can also have a life of their own, just gotta fully qualify it.
+```cpp
+    Outer::Inner1 inner1;
+    inner1.value1 = 42;
+    inner1.printValue1();
+```
+- Templatized nested classes are also possible.
+
+### Dependent and Non-Dependent
+---
+
+- Non-Dependent datatypes are those which are not dependent on the template type.
+- These are known at compile time.
+- `using x = y`, Have to use `typename`. Basically when using aliases. Not needed during inheritance.
+```cpp
+struct dictionary_traits
+{
+    using key_type = int;
+    using map_type = std::map<key_type, std::string>;
+    static constexpr int identity = 1;
+};
+template <typename T> //* T is a type of type class
+struct dictionary :T::map_type      //! Funny I dont need it here [1]
+{
+    int start_key { T::identity };   //! Nothing special here [2]
+    typename T::key_type next_key;   //! Back to my old tricks  [3]
+};
+int main()
+{
+    dictionary<dictionary_traits> d;
+}
+```
+
+- Have to specify when a funcition is a template
+```cpp
+template <typename T>
+struct base_parser
+{
+   template <typename U>
+   void init()
+   {
+      std::cout << "init\n";
+   }
+};
+template <typename T>
+struct parser : base_parser<T>
+{
+    void parse() {
+        base_parser<T>::template init<int>();
+        std::cout << "parser\n";
+    }
+}
+```
+
+- For template specialization, the name lookup is done at the call, so at the end. Hence the order in which you define the structures doesn't matter. But for regular functions, the name lookup is done within the class and so if the function isn't present in the lookup, it won't choose that.
+
+```cpp
+void handle(double value)  
+//* [2] handle(double) definition
+{
+   std::cout << "processing a double: " << value << '\n';
+}
+template <typename T>
+struct parser              
+//* [3] template definition
+{
+   void parse()
+   {
+      handle(42);          
+      //! [4] non-dependent name
+   }
+};
+void handle(int value)    
+ //* [5] handle(int) definition
+{
+   std::cout << "processing an int: " << value << '\n';
+}
+```
+
+- Name lookup happens at `[4]`
+
+```cpp
+struct handler          
+//* [1] template definition
+{
+   void handle(T value)
+   {
+      std::cout << "handler<T>: " << value << '\n';
+   }
+};
+template <typename T>
+struct parser          
+ //* [2] template definition
+{
+   void parse(T arg)
+   {  //! [3] dependent name
+      //! It does not do a namelookup here 
+      //! but only at the point parser is instantiated
+      //! which happens in [6]
+      arg.handle(42);   
+
+   }
+};
+template <>
+struct handler<int>    
+//* [4] template specialization
+{
+   void handle(int value)
+   {
+      std::cout << "handler<int>: " << value << '\n';
+   }
+};
+```
+
+- Name lookup happens when called in the main func
+
+---
+Functors can be used like this
+```cpp
+template<typename T>
+class Adder {
+public:
+    T operator()(T x, T y) const {
+        return x + y;
+    }
+};
+
+int main() {
+	Adder<int>()(1, 2);
+	// or
+	Adder<int> a;
+	a(1, 2);
+}
+```
