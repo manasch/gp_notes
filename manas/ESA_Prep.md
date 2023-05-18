@@ -461,6 +461,32 @@ class Derived : public T {
 
 > Templatized derived class can inherit for a non-templatized base class
 
+```cpp
+#include<iostream>
+using namespace std;
+template <typename T>
+class Base {
+ public:
+  void foo() { std::cout << "Base" << std::endl; }
+};
+
+template <typename T>
+class Derived : public Base<T> {
+ public:
+  void foo() { std::cout << "Derived" << std::endl; }
+};
+
+int main() {
+  Derived<int> d;
+  d.foo();
+  
+  Base<int> *p = &d;
+  p->foo();
+  return 0;
+}
+```
+
+- This will give `Derived` and `Base`, this is because the derived class is just hiding the base class' implementation of the function. If the base class function foo is defined as `virtual` and then overrided in the derived class, then both these calls will give `Derived`
 ---
 
 ### Composition and Constructors
@@ -658,11 +684,93 @@ struct handler<int>
 # Unit - 3
 ---
 
+> Function objects (and lambdas) tend to be faster than function arguments.
 
+wrt policy for algorithms.
 
+- STL doesn't check for safety. Only the bare minimum necessary stuff. Which is how it's fast.
 
-
+### Containers
 ---
+
+Types of containers:
+
+- Sequence
+- Associative
+
+Sequence has lists, arrays, vector..
+Associative has maps and sets.
+
+> Stacks and queues are known as container adaptors.
+
+Associative
+
+- By default use the `<` operator to sort.
+- Typically implemented as binary trees.
+
+### Iterators
+---
+
+Declare iterator as such
+```cpp
+set<int>::iterator it;
+vector<int>::iterator it;
+```
+
+map iterators would work on pairs
+```cpp
+std::pair<int, int>
+```
+
+`std::find` return an iterator at the location it found or the end of the container.
+```cpp
+vector<int>::iterator it = std::find(vec.begin(), vec.end(), elemToFind);
+```
+
+
+`std::list` can't perform normal iterator addition on this.
+
+### Functors
+---
+
+Functors are class objects that behave like functions. It requires `()` operator to be overloaded. Can maintain state, and are sometimes faster, the difference between this and a regular function.
+
+```cpp
+class MyFunctor {
+public:
+	MyFunctor(int x) : value_(x) {}
+
+	// Only function present
+	int operator()(int x) {
+		return x * value_;
+	}
+private:
+	int value_;
+};
+```
+
+Usually work with
+	- Function pointers
+	- Lambda functions
+	- Functors
+
+```cpp
+// Using a function object
+class AddOne {
+public:
+    template <typename T>
+    void operator()(T& t) const {
+        t += 1;
+    }
+};
+
+// Using an ordinary function
+template <typename T>
+void addOne(T& t) {
+    t += 1;
+}
+```
+
 Functors can be used like this
 ```cpp
 template<typename T>
@@ -680,3 +788,52 @@ int main() {
 	a(1, 2);
 }
 ```
+
+### Type Traits
+---
+
+- Compile time meta function.
+```cpp
+#include<type_traits>
+
+template<typename T>
+void foo(T val) {
+	if (std::is_integral<T>::value) {
+		//..
+	}
+}
+```
+
+```cpp
+struct A {
+	A(const A&) = delete; // Indicates that the copy constructor is deleted, no other object can make copies of this object.
+	~A() noexcept; // Indicates that the destructor will not throw any exceptions.
+}
+```
+
+if `noexcept(false)` is used that means the destructor can throw exceptions making it potentially unsafe hence `is_destructible` will give false.
+
+> `find_if` used multiple times is faster than `count_if`
+
+SFINAE can be implemented using `enable_if`.
+or otherwise one classic example.
+
+```cpp
+template<typename T>
+struct HasFooMethod {
+  template<typename U>
+  static auto test(int) -> decltype(std::declval<U>().foo(), std::true_type());
+  
+  template<typename U>
+  static std::false_type test(...);
+
+  static constexpr bool value = decltype(test<T>(0))::value;
+};
+```
+This creates a test function to call and check if T has a foo method. Upon failure it doesn't crash, but just silently removes it from the list of overloaded functions that can be called by T.
+
+---
+---
+
+# Unit - 4
+---
