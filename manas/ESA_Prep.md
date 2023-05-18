@@ -837,3 +837,97 @@ This creates a test function to call and check if T has a foo method. Upon failu
 
 # Unit - 4
 ---
+
+### Template Metaprogramming
+
+- Metaprogramming is the writing of computer programs thar write or manipulate other programs
+- Uses template instantiation to drive compile-time evaluation.
+
+RTTI - Run-Time Type Identification is a mechanism where an object's data type can be found out at run time and this is only available to those classes that have atleast one virtual function. (So is it similar to reflection ?)
+
+So Reflection is the ability for a piece of code to examine and modify its own structure, behavior and metadata at runtime.
+
+`decltype(expr)` is a keyword that is used to find the type of an expression at compile-time.
+
+- Metafunction: is essentially a template that takes in template parameters and returns a type or value at compile time.
+
+SFINAE in use
+```cpp
+template<typename T>
+typename std::enable_if<has_addition_operator<T>::value, T>::type add(T a, T b) {
+	return a + b;
+}
+
+```
+
+- Constexpr is used to indicate that a function or object can be evaluated at compile-time. The compiler tries its best to evaluate the expression at compile-time.
+
+---
+
+### Virtual Functions
+
+```cpp
+#include<iostream>
+using namespace std;
+template <typename T>
+class Base {
+ public:
+  void foo() { std::cout << "Base" << std::endl; }
+};
+
+template <typename T>
+class Derived : public Base<T> {
+ public:
+  void foo() { std::cout << "Derived" << std::endl; }
+};
+
+int main() {
+  Derived<int> d;
+  d.foo();
+  
+  Base<int> *p = &d;
+  p->foo();
+  return 0;
+}
+```
+
+This is early binding, the Derived foo hides the base foo, but if the base foo is virtual and overrided then both print Derived which is late binding.
+
+> Virtual destructors are critical, could lead to dangerous code if not.
+
+CRTP is done to perform compile time binding. CRTP stands for Curiously Recurring Template Pattern.
+
+```cpp
+template <typename Derived>
+class Shape {
+public:
+	void draw() {
+		static_cast<Derived*>(this)->draw_impl();
+	}
+};
+
+class Circle : public Shape<Circle> {
+public:
+	void draw_impl() {
+		cout << "Drawing a circle" << endl;
+	}
+};
+
+class Square : public Shape<Square> {
+public
+	void draw_impl() {
+		cout << "Drawing a square" << endl;
+	}
+}
+
+```
+
+Types of folds
+
+-   Unary right fold: (pack op ...) --> (1 + (2 + (3 ....(n-1 + n))))
+-   Unary left fold: (... op pack) --> (((1 + 2) + 3) ...)
+-   Binary right fold: (pack op ... op init) --> (arg1 op (arg2 ( op arg3 ...)))
+-   Binary left fold: (init op ... op pack) --> ((((init op arg1) op arg2) op arg3))
+
+---
+---
