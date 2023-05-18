@@ -392,3 +392,71 @@ constexpr T pi = T(3.141592);
 
 ### Inheritance
 
+```cpp
+template <typename T>
+class Base{
+public:
+  void func1() const {
+    std::cout << "func1()\n";
+  }
+  void func2() const {
+    std::cout << "func2()\n";
+  }
+  void func3() const {
+    std::cout << "func3()\n";
+  }
+};
+
+template <typename T>
+class Derived: public Base<T>{
+public:
+  using Base<T>::func2;              // (2)
+  void callAllBaseFunctions(){
+
+    this->func1();                   // (1) Make this implicit dependent
+    func2();                         // (2) The expression using Base<T>::func2 
+    Base<T>::func3();                // (3) Fully qualify
+
+  }
+};
+```
+
+- Need to scope it in one of those 3 ways.
+
+Can have a specialized base class.
+```cpp
+template<typename T>
+class Base {
+	public:
+		void set(const T& val) {data = val;}
+		T get() const {return data};
+	private:
+		T data;
+};
+
+template<typename U>
+class Derived : public Base<int> {
+	public:
+		void setDerived(const U& val) {derived_data = val;}
+		U getDerived() const {return derived_data;}
+		int getBase() const {return Base<int>::get();}
+		void setBase(const int& val) {Base<int>::set(val);}
+	private:
+		U derived_data;
+}
+```
+
+> Also possible to inherit from another template provided that the template is a class.
+
+```cpp
+class Base {
+	//..
+};
+
+template<typename T>
+class Derived : public T {
+	//..
+};
+```
+
+> Templatized derived class can inherit for a non-templatized base class
