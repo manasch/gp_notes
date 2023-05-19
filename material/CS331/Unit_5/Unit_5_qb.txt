@@ -1,0 +1,26 @@
+//?????
+Java related:
+what is single rooted hierarchy?
+What is the difference between value(primitive) types and reference types?
+What is boxing and unboxing?
+Why do generics work only on reference types?
+what is type erasure?
+Why we cannot have static fields in generic types?
+
+what is the concept of interface in Java?
+How does Java support callback through anonymous inner class?
+What are the two different ways to make sort of an array flexible?
+	comparable interface?
+	comparator inerface?
+	
+	
+what are these in C#?
+delegate
+property
+indexer
+interface
+
+Can we make generics using value types?
+Does C# follow type erasure?
+Does C# follow single rooted hierarchy?
+

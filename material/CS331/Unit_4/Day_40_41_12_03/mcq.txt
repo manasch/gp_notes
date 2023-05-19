@@ -1,0 +1,16 @@
+min_element returns the position of the smallest in the range - could be based
+on a predicate. The algorithm is linear. 
+So,
+
+The predicate should be unary
+The predicate should be binary
+Need not be a predicate - could be any functor
+returns the smallest element
+
+
+What is true of adjacent_difference?
+
+requires 2 arguments
+can have a unary predicate
+0th element of output is same as the 0th element of input
+0th element of output is difference of 1st and 0th elements of input 

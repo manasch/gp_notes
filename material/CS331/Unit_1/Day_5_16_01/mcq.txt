@@ -1,0 +1,17 @@
+overloading is resolved at
+
+compile time
+link time
+load time
+run time
+
+void foo(int*);
+double x; 
+foo(&x);
+
+The above function call
+
+a) goes through compilation, linking, loading and running
+b) gives a compile time error
+c) gives a linker error
+d) none of these

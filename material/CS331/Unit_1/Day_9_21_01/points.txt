@@ -1,0 +1,26 @@
+Generic Programming : day 9 : 21st Jan 2021
+queries:
+
+could you please check if these are the right answers for mcq.txt?
+1. b) pointer to a
+        //Sir, what does line-3 do?
+2. c) 1000 + sizeof(int) * 5
+
+in qb.txt, is this right for the first question?
+1. distinguish value and reference semantics
+In a Reference Semantics expression, the arguments refer to the original objects.
+While, in a Value Semantics expression, the arguments refer to copies of the values in the objects.
+
+reference semantics for equality : references should refer to the same object
+value semantics for equality : referrents are compared
+
+
+so far,
+template functions
+implicit instantiation
+explicit instantiation
+specialization 
+	no partial specialization C+ 2020
+-------------------------
+
+

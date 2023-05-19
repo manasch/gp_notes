@@ -1,0 +1,174 @@
+template<typename T1, typename T2>
+class A {
+	A(int, double);  
+};
+
+The right way to instantitate this class is
+
+A a(10, 2.5);
+A a<int, double>(10, 2.5);
+A<10, 2.5> a;
+CCCC A<int, double> a(10, 2.5);
+
+
+template<typename T1, typename T2>
+class A {
+	A(int, double);  
+};
+
+template<typename T1, typename T2>
+A<T1, T2> make_A(T1 t1, T2 t2)
+{
+	return _____;
+}
+
+This is a  wrapper function to make an object of type A.
+What should appear in the return statement?
+
+CCCC A<T1, T2>(t1, t2)
+A<t1, t2>(T1, T2)
+A(T1, T2)<t1, t2>
+A<t1, t2>(T1, T2>
+
+
+template<typename T1 = int>
+class A { };
+
+Which of the following in not valid instantiation?
+
+A<int> a
+A<A<int>> a
+A<char> a
+CCCCA a
+
+int a[] = {1, 2, 3, 4, 5};
+vector<int> v(a, a + 4);
+vector v has
+
+2 elements
+5 elements
+no elements - results in syntax error
+CCCC 4 elements
+
+
+while(first != last)
+{
+	// some code
+	++first;
+	// some code
+	++first;
+}
+
+CCCC undefined behaviour of the range defined by the iterator has odd # of elements
+undefined behaviour of the range defined by the iterator has even # of elements
+will always terminate after executing the body of the loop half the # of elements times
+none of these
+
+
+while(first != last && *first != t)
+{
+	++*first;
+}
+
+will exit if first = last in the beginning
+will exit if the first element becomes equal t after a  few increments
+will be an undefined behaviour if t < *first as the loop is entered
+CCCC none of these
+
+
+template<typename ptr_t>
+void disp(ptr_t first, ptr_t last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		first += 1;
+	}
+	cout << "\n";
+} 
+ptr_t should be at least
+
+input iterator
+output iterator
+forward iterator
+CCC none of these
+
+--------------
+
+This counts the # of elements in the sequence
+template<typename ptr_t>
+int my_count(ptr_t first, ptr_t last)
+{
+	int c(0);
+	while(first != last)
+	{
+		++c;
+		first += 1;
+	}
+	return c;
+} 
+?????????
+does not work is the sequence is empty
+returns 1 if first == last in the beginning
+does not work with bidirectional iterator
+can be made more efficient if we know that the iterator is random access
+
+
+
+a is an array of some component type.
+sort(a, a + 5, Test());
+What can we say about the third argument?
+
+CCC Test() is an object of the class supporting function operator which
+	takes two arguments and returns a boolean
+Test() is an object of the class supporting < operator
+Test() is a functor call
+Test() is an object of the class supporting function operator which
+	takes one argument and returns a boolean
+----------
+
+find(a, a + 5, Foo())
+a is an array of some component type.
+
+CCCC Foo is a function which returns an object of component type of the array a
+Foo should be a functor class
+Foo() is a function call which returns a callable back
+Foo is a class which implements == operator
+
+struct Test
+{
+	bool operator()(const string& s1, const string& s2)
+	{
+		return s1[0] < s2[0];
+	}
+};
+set<string, Test> s("raja", "rama", "mohan", "roy");
+The number of elements in the set s is
+CCCC 2
+1
+4
+3
+
+class Date
+{
+	private:
+	int dd_;
+	int mm_;
+	int yy_;
+	public:
+	Date(int dd = 1, int mm = 1, int yy = 1970);
+	friend bool operator<(const Date&, const Date&);
+	// ...
+}
+
+map<string, Date> m;
+use of m["unix"] as an expression causes 
+
+compile time error
+runtime exception
+CCCC the value for unix to become Date(1, 1, 1970)
+the value for unit to become Date(0, 0, 0)
+
+
+
+

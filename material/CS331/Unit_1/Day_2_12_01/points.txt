@@ -1,0 +1,102 @@
+Sorting : generic algorithm
+list : generic data structure
+
+------------------
+paradigms in programming:
+1. procedural 
+2. object based 
+	class : mechanism to make our own type
+			user defined type
+			pure type : what we can do? does not say how we do it
+			class : what as well as how
+	type : set of values and set of operations
+	       operation : what and not how
+	       interface and implementation
+	object : variable of class type
+	- abstraction
+	- encapsulation
+	- composition
+3. object oriented 
+	- abstraction
+	- encapsulation
+	- composition
+	- inheritance
+	- polymorphism
+4. generic programming
+	- generic algorithms and generic data structures
+5. functional programming
+	- function : first class citizen of the language
+		- assignment, parameter passing, return
+	- math concept : pure
+		arguments immutable
+	- pure, re-entrant, thread safe ?
+	- currying?
+	- may want to check : ranges C++ 20
+6. logic programming
+--------------------------------------------------------------------
+
+C++ :
+- programming language
+- features:
+	procedural
+	generic programming
+	functional features: 
+		lambda
+		functors
+	supports various levels of abstraction
+- multiparadigm language
+- multiple abstraction
+- type safety
+- efficiency
+
+1983 C++
+1998 C++ 98
+2003 C++ TR1
+2011 C++ 11
+2014 C++ 14
+2017 C++ 17
+2020 C++ 20
+
+----------------------------------------------------------------
+
+abstraction:
+- cheque in a bank
+	attributes:
+		ac no
+		cheque #
+		amt
+		payee's name
+		bank
+		branch
+		date
+		
+		size of the cheque
+		colour - bg and fg
+		quality of paper
+		font  :size, style
+		
+	behaviour:
+		deposit
+		withdraw
+		transfer
+		write
+		bounce
+		stop payment
+		
+printer's cheque
+banker's cheque	
+same entity looks different based on how we look at it - abstraction
+
+
+
+
+
+
+
+
+
+
+
+	
+	       
+

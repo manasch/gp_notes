@@ -1,0 +1,25 @@
+class A
+{
+	A(int = 1, int = 2);
+};
+
+A a1(10, 20); is ok
+A a2(30); is ok
+A a3;  is ok
+none of these
+
+class A
+{
+	public:
+	A(char *p = 0);
+	~A();
+};
+
+A::A(char *p) : p_(p) { }
+A::~A() { delete p_; }
+
+delete p_ deletes whatever p points to - no matter to which segment p points to.
+delete p_ fails if p_ is initialized to 0
+delete p_ fails if p_ points to location on the heap
+none of these
+

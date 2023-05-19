@@ -1,0 +1,10 @@
+what are these in C#?
+delegate
+property
+indexer
+interface
+
+Can we make generics using value types?
+Does C# follow type erasure?
+Does C# follow single rooted hierarchy?
+

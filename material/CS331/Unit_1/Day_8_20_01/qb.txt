@@ -1,0 +1,16 @@
+distinguish value and reference semantics
+
+distinguish between overloading and template?
+How does template specialization work?
+
+Why should the template function be defined in the header
+file and not a separate implementation file?
+
+What is the significance of W in the output of nm command?
+
+How does the linker handle multiple instantiation of
+the a function for the same type in different translation?
+
+
+
+

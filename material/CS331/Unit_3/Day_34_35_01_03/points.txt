@@ -1,0 +1,9 @@
+Generic Programming : day 34-35; 1st March 2021
+so far,
+	STL Philosophy
+	containers, iterators and algorithms
+	iterator hierarchy
+	how algorithms work with containers through the bridge made by iterators
+	
+--------------------------
+

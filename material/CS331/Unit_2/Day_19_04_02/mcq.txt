@@ -1,0 +1,17 @@
+a and b are objects of class X.
+a += b
+This expression requires that
+
+we define + and  =
+we define + and the class will gave = by default
+we define += 
+none of these
+
+a is an object of class X.
+~a
+
+is call to dtor
+is a builtin operator by default
+is translated to a.operator~()
+none of these
+

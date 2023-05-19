@@ -1,0 +1,12 @@
+Discuss the return mechanism.
+	when to return by value
+	when to return by reference
+	when to return by reference to const?
+	
+if the class contains a file descriptor field,
+and a file is opened in the ctor and closed in the dtor
+	what happens on default assignment?
+	what happens if we call dup in the assignment operator?
+
+
+

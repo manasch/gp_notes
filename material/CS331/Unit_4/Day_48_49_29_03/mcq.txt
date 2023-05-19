@@ -1,0 +1,14 @@
+deleting a node from a list
+
+invalidates all iterators, references and pointers
+invalides only the iterator, reference and pointer referring to the deleted node*
+invalides only pointers and references and not iterators
+none of these
+
+which of the following is true?
+emplace avoids call to copy ctor*
+when size of vector reaches half capacity, the vector is resized
+capacity of vector is always less than the size of vector
+capacity of vector is always less than or equal to the capacity
+
+

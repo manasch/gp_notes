@@ -1,0 +1,7 @@
+why do we use nested class?
+
+How do we hide a class? 
+How do we an object of a nested class?
+
+Which are the operators an iterator of accumulate should support?
+

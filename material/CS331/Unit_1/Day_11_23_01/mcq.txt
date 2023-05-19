@@ -1,0 +1,24 @@
+void foo()
+{
+	cout << "foo called\n";
+}
+
+	void (*p)();
+	p = foo;
+	p();
+	
+--------------
+
+template<typename T>
+void myswap(T& a, T& b)
+{
+	T temp(a); a = b; b = temp;
+}
+
+Which of the following is false?
+
+This can be used to swap two int variables
+This can be used to swap two double variables
+This can be used to swap two structure variables
+This can be used to swap two c string 
+	

@@ -1,0 +1,26 @@
+Generic Programming : day 24: 11th Feb 2021
+
+so far:
+class
+fundamental operators
+operator function
+friend function
+callback : pointer to function or functor (object of a class
+	supporting the function call operator)
+	
+differences between call thro pointer to function and call thro functor
+
+1. pointer to function
+a)
+	compiler cannot decide which fn is getting called
+	runtime mechanism
+	code cannot be inlined
+b)  has no state info	
+	
+2. functor
+a) 
+	compiler can makeout which fn is getting called
+	resolution is at compile time
+	code can be inlined
+b) can have state info
+

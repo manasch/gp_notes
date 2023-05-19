@@ -1,0 +1,92 @@
+Generic Programming : day50-51 : 5th April 2021
+
+to discuss:
+a) GP projects
+b) Sharing of marks
+   PESU academy (40)
+   TA - lab - (20) - A and B
+c) GP review :
+     Written component
+     lab component
+     
+d) emplace : avoid temporary
+    "consider" emplace over push_back ...
+    - single argument - call ctor to make a temporary
+    assignment
+    emplace in a sorted associative container
+----------------------------------------------------------   
+
+Java generics
+C# generics
+C++ : TMP, concepts
+	no lab test on these topics
+	
+-------------------------------------------------------
+
+Java :
+	object oriented 
+	strictly:
+		no free functions
+		no global variables
+		no 'C' static concept
+	no operator overloading
+	garbage collector
+		mark and sweep algorithm
+	reference is like a pointer : no pointer arithmetic
+	no destructor
+		takes care of only one resource : memory
+		does not take care of all other resources
+	introduced : try with resource
+	try(myclass c = new myclass())
+	{
+	}	
+	catch()
+	{
+	}
+	// myclass should implement an interface called IO.Closeable
+	// method called close
+	// when the try block is exited, c.close() will be called
+	
+	java runs on JVM ( Java virtual machine )
+	zero address format instructions
+	compile once run anywhere
+	lang : architecturally neutral
+	JIT :just in time compilation
+	
+	no goto
+	no multiple inheritance
+	all functions(but for static, ctor, private) are virtual
+	
+	types:
+	value type : byte char boolean short int long float double
+		fixed size
+		allocated on stack
+	reference type : object array
+		reference could be on the stack
+		referrent is always in the heap
+	single rooted hierarchy
+		every class inherits from class called Object
+	
+	boxing and unboxing:
+		generic : defined only on reference types
+		conversion of value type to reference type : boxing
+		conversion of reference type to value type : unboxing
+		
+		int a = 10; //  value type
+		Integer b = new int(10); // reference type
+		// b points to an unnamed location on heap with the value 10
+		Integer c = 20; // similar to b
+		
+		Integer d; // no location for int; have a reference
+		d = a; // boxing; create an int location on heap; copy
+		int e;
+		e = c; // unboxing
+		
+			
+	
+	
+		
+
+
+
+

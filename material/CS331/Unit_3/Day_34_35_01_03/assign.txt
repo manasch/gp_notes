@@ -1,0 +1,11 @@
+sort an array of dates 
+	in the order of month
+	in the reverse chronological order
+	
+sort an array of Persons
+	in order of name
+	in reverse order of age
+	
+sort an array of int based on digital sum
+
+

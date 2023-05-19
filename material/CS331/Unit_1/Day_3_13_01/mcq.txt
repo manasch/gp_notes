@@ -1,0 +1,14 @@
+encapsulation 
+
+is data hiding
+cannot support hiding methods
+supports separating interface and implementation
+none of these
+
+which of the following is true?
+
+we can modify an interface
+we can remove an interface
+we can a new interface
+none of these
+

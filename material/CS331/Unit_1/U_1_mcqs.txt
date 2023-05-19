@@ -1,0 +1,221 @@
+1. when the fields of sorting of records of data structure are changed in 
+a comparison based sorting,
+a) loop initializations have to be changed
+b) loop terminations have to be changed
+c) sort algorithm should be totally changed
+Cd) none of these
+
+2. Linked list is made of nodes having key field and link field.
+   Changing the key field affects the following operations.
+a) initialization of list
+b) removal of list
+c) traversal of list
+Cd) none of these
+
+An abstraction of a cheque
+
+should contain payee's name
+should contain a place to put payee's name
+Cdepends on the observer
+none of these
+
+size of an object is influened by
+
+sizes of bodies of functions
+# of functions - will have one pointer per function
+Conly attributes of the class
+none of these
+
+encapsulation 
+
+is data hiding
+cannot support hiding methods
+Csupports separating interface and implementation
+none of these
+
+which of the following is true?
+
+we can modify an interface
+CCCwe can remove an interface
+we can a new interface
+none of these
+
+1) which of the following is true?
+
+Caddress of a global variable will not change during the program execution
+a variable exists at only one place
+size of variable depends on the value assigned to it
+none of these
+
+2) 
+	int a = 10;
+	int b;
+	if(a > 5) 
+		b = 20;
+what happens if we execute this code in Java and in C++?
+
+compile time error in Java and ok in C++
+compile time error in C++ and ok in Java
+Cok in both
+none of these
+
+overloading is resolved at
+
+Ccompile time
+link time
+load time
+run time
+
+void foo(int*);
+double x; 
+foo(&x);
+
+The above function call
+
+a) goes through compilation, linking, loading and running
+CCCb) gives a compile time error
+c) gives a linker error
+d) none of these
+
+which of the following is true?
+
+Ctemplate instantiation creates a set of overloaded functions.
+templates are runtime mechansim
+templates are instantiated for every call
+template parameters should be of builtin types
+
+which of the following is false?
+
+functons can be overloaded based on difference in
+order of parameters
+
+Cfunctions can be overloaded based on difference in
+return type
+
+functions can be overloaded based on difference in
+type of parameters
+
+functions can be overloaded based on # of parameters
+
+ 
+template function is instantiated for
+
+every function call
+Cevery function call with argument of a different type
+every function call with argument of different value
+none of these
+
+explicit instantiation requires that
+
+we specify the types in angle bracker before the function name in the call
+Cwe specify the types in angle bracker between the function name and left parenthesis
+we specify the types along with arguments within parentheses in the call
+none of these
+
+int a(10);
+int b(20);
+r = b;
+int& r(a);
+
+&r gives
+
+pointer to r
+CCCpointer to a
+pointer to b
+error
+
+-------
+
+template<typename T>
+T what(T x)
+{
+	return x + 5;
+}
+int a(100);
+// &a is equal to 1000
+int *p(&a);
+what is returned if we call what(p)?
+
+a) 1005
+b) 105
+Cc) 1000 + sizeof(int) * 5
+d) none of these
+
+
+template<typename T>
+void foo(T t);
+
+int a[10]; foo(a);
+What does T get instantiated to?
+
+int
+Cint*
+void*
+none of these
+
+------------
+
+template<typename A, typename B>
+void bar(A *x, B y);
+What types A and B get instantiated to?
+
+int a[10]; 
+bar(a, 10);
+
+A is int* and B is int
+CA is int and B is int
+A is int and B is int*
+none of these
+
+template<typename T1, typename T2>
+T2 foo(T1 t1)
+{
+	// ...
+}
+which of the following will compile?
+
+foo(10);
+foo<int>(10);
+Cfoo<double, int>(10);
+foo(10, 2.5);
+
+----------------
+
+template<typename T>
+T foo(T x)
+{
+	return *x * *x;
+}
+
+For this work,
+
+the type T should support multiplication and dereferencing
+the type T should support dereferencing and T* should support multiplication
+the type to which T points to should support multiplication and dereferencing
+CCCnone of these
+
+
+void foo()
+{
+	cout << "foo called\n";
+}
+
+	void (*p)();
+	p = foo;
+	p();
+	
+--------------
+
+template<typename T>
+void myswap(T& a, T& b)
+{
+	T temp(a); a = b; b = temp;
+}
+
+Which of the following is false?
+
+This can be used to swap two int variables
+This can be used to swap two double variables
+This can be used to swap two structure variables
+CThis can be used to swap two c string 
+	

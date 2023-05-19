@@ -1,0 +1,10 @@
+1. when to use templates and when to use overloading?
+2. Observe the name mangling of 
+	normal functions
+	and those created by the template mechanism.
+	Why that difference?
+3. Can we declare a template function in header,
+   define in an implementation file and invoke in 
+   another translation?
+   Give reasons.
+   

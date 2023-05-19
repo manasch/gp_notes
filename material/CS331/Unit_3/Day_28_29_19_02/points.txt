@@ -1,0 +1,8 @@
+Generic Programming: day 28-29 : 19th Feb 2021
+so far,
+template functions
+template classes - in progress
+
+------------
+
+

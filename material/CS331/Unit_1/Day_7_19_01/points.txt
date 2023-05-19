@@ -1,0 +1,26 @@
+Generic programming
+day 7 :
+so far :
+function prototype
+overloading
+argument parameter matching
+intro to generic function
+-----------------
+
+we discussed:
+pointer and reference
+
+template function is instantiated : generates a function with specific types
+based on the call
+instantiation of template function results in overloaded functions
+instantiation per type and not per call
+	compared to macro, code generated is less
+	less code bloat problem
+	
+- implicit instantiation
+	compiler deduces the type based on argument parameter matching
+- explicit instantiation
+	specify a list of types in angle brackets between the fn name and 
+		left parenthesis in the call
+		
+

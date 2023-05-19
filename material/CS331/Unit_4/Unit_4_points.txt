@@ -1,0 +1,85 @@
+Generic Programming : day 38-39 : 8th March 2021
+so far,
+	STL philosophy
+	containers
+	iterators
+	algorithms
+	predicate as expr
+	predicate as type
+---------------------------------------
+
+bind with overloading
+	https://isocpp.org/blog/2018/06/quick-q-stdbind-overload-resolution
+= : capture : value or const reference
+function<int(*)(int, int)> why not this?
+
+Generic Programming : day 40-41 : 12th March 2021
+so far,
+	STL
+	bind
+	lambda
+	
+------------------
+ISA 1 :
+Test 60 marks
+part 1 :
+	Writing into the computer itself
+	8 questions - each carries 5 marks : total 40
+	max 1 hour
+	function templates : 2 questions
+	class templates : 2 questions
+	iterators and functors : 2 questions
+	builtin containers : 2 questions
+	
+	be precise. Write short answers.
+	
+part 2 :
+	Write Two programs.
+	2 questions A and B- each 10 marks : total 20
+	
+	create a folder on a server - name : SRN - all lower cases
+	create folders A and B
+	copy your source code only to these folders.
+	
+	
+
+Generic Programming : day 42-43 : 22nd March 2021
+discussing STL
+	algorithms
+	
+---------------
+	
+vector<int> v;
+value type : int
+pointer type : int*
+reference type : int&
+
+vector<bool> vb{false, true, false};
+vb[2] = true;
+&vb[2]
+vector<bool>::iterator it;
+...
+value type ? bool
+reference type? struct
+pointer type? struct
+
+---------------------	
+Generic Programming : day44-45 : 26th March 2021
+so far,
+	playing with types
+	traits
+	types within containers
+	
+-----------------
+
+Generic Programming : day 46-47 : 27th March 2021
+so far,
+	discussing STL
+	traits
+	
+----------
+
+Generic Programming : day 48-49 : 29th March 2021
+so far,
+	discussing STL
+	

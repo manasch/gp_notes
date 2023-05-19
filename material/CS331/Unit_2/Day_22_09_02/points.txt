@@ -1,0 +1,10 @@
+Generic Programming : day 22 : 9th Feb 2021
+so far,
+	class
+	fundamental operators
+	friend function
+	operator functions
+-----------------------
+operators:
+++
+<

@@ -1,0 +1,4 @@
+What is the difference between typedef and using mechanisms in creating a typename?
+Why a template class cannot be instantiated by implicit instantiation?
+What are default template type parameters? How are they used?
+

@@ -1,0 +1,7 @@
+How is vector<bool> specialized from vector<T>?
+How do we implement pointer and reference type in such a case?
+
+How do we develop mapping of one type to another?
+
+What is dependent type? How do we determine the type in such a case?
+

@@ -1,0 +1,123 @@
+Generic Programming: day12 : 25th Jan 2021
+Queries:
+compile time or runtime ? 
+// Dhruva Kashyap
+#include <stdio.h>
+void foo() { printf("foo\n"); }
+void bar() { printf("bar\n"); }
+int main()
+{
+    void (*p)();
+    p = foo;
+    p();
+    p = bar;
+    p();
+}
+on gcc -S test.c, main executes the following
+leaq foo(%rip), %rax
+movq %rax, -8(%rbp)
+movq -8(%rbp), %rdx
+movl $0, %eax
+call *%rdx
+leaq bar(%rip), %rax
+movq %rax, -8(%rbp)
+movq -8(%rbp), %rdx
+movl $0, %eax
+call *%rdx
+showing that calls are resolved at run time.
+And on compiling with gcc -S -O3 test.c
+subq $8, %rsp
+.cfi_def_cfa_offset 16
+xorl %eax, %eax
+call foo
+xorl %eax, %eax
+call bar
+Calls are resolved at compile time. 
+----------------
+My doubt is wrt the parameter " bool (*comp)(const T&, const T&) " given in the assign.txt.
+If we implement " bool comparator(const T& x, const T& y) " and pass comparator as an argument, then isn't it still a compile-time mechanism, sir (unless we make comp1 and comp2 with same types)?
+So, can we say that not all calls through function pointer are run-time mechanisms
+--------------------
+For the parameter bool (*comp)(const T&, const T&), the function prototype bool comparator<char *>(char * const& x, char * const& y) worked.
+------------------------
+separating value type, reference type and pointer type
+------------------------
+
+ends unit 1
+-----------
+
+begin unit 2
+-----------
+
+class :
+	a user defined type
+	not a pure type
+	type + implementation
+	
+	
+C++ : In this context, keywords : class and structure have the semantics
+      access control : class : implementation ; private
+      					struct : interface : public
+      					
+Fundamental operations:
+constructor
+destructor
+copy constructor
+copy assignment operator
+---------
+move constructor
+move assignment operator
+----------------------------
+
+constructor:
+	member function of a class
+	does not create an object
+	initialize an object
+		not just putting values to the attributes
+		acquiring resources
+			allocate memory
+			open file
+			acquire mutex
+			p operation on semaphore
+			attach to shared memory
+	whenever an object is created ctor has to be called 
+	
+	name: classname
+	no return type
+	can have parameters
+	can be overloaded
+	default ctor : has no parameters or all parameters are default
+	vanishes when we write our own ctor
+	
+	
+
+destructor:     
+	member function of a class
+	de-initialize the object
+		release the resources
+	always called when an object dies
+	
+	name : ~classname
+	no return type
+	no parameters
+	cannot be overloaded
+	default dtor 
+	vanishes when we write our own dtor
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+ 						
+
+
+
+

@@ -1,0 +1,27 @@
+call to pre increment operator 
+
+causes two extra objects and four extra function calls
+causes one extra object  and two extra function calls
+causes return of a rvalue
+none of these
+
+Which of the following is syntactically correct?
+class B
+{
+	// ...
+};
+class A
+{
+	public:
+	// fill here
+};
+
+B operator B();
+B operatorB();
+operatorB();
+operator B();
+
+
+
+
+

@@ -1,0 +1,8 @@
+1. What are the different aspects to be considered while sorting a data structure?
+2. What do these terms mean?
+   stable sorting
+   inplace sorting
+   external sorting
+   non-comparison based sorting
+   sentinel
+   

@@ -1,0 +1,22 @@
+template<typename ptr1_t, typename ptr2_t>
+bool are_equal(ptr1_t first1, ptr1_t last1, ptr2_t first2, ptr2_t last2)
+{
+// TODO
+} 
+Test whether the given two sequences have the same elements
+should the two containers be of the same type?
+should we require 4 parameters?
+Test your code with
+	array with array
+	array with vector
+	vector with list
+
+-------------------------
+template<typename ptr1_t>
+bool is_sorted(ptr1_t first1, ptr1_t last1)
+{
+// TODO
+}
+check whether the elements in ascending order
+
+

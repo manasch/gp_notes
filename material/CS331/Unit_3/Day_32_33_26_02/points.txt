@@ -1,0 +1,175 @@
+Generic Programming: day 32-33 : 25th Feb 2021
+so far,
+template functions
+template classes
+	explicit instantiation
+	default template parameters
+	typedef, using and auto
+
+------------
+
+C++ STL Philosophy:
+- containers
+- algorithms
+- iterators
+- functors
+- adaptors
+- allocator
+
+- discussed 5 algo:
+	find
+	copy
+	replace
+	reverse
+	sort
+---------------------
+a pair of iterators abstracts away container itself
+a) find:
+//	ptr_t supports:
+//		!= ==
+//		*first : rvalue
+//		++ (pre and post)
+//		=> input iterator
+template<typename ptr_t, typename T>
+ptr_t my_find(ptr_t first, ptr_t last, T t)
+{
+	while(first != last && !(*first == t))
+	{
+		++first;
+	}
+	return first;
+}
+b) copy :
+// ptr_t : 
+//		!= ==
+//		*first : rvalue
+//		++ (pre and post)
+// dst_ptr_t :
+//		* : dereferencing : lvalue
+//		int& operator*() { }
+//		++ (pre and post)
+//		=> output iterator
+
+template<typename ptr_t, typename dst_ptr_t>
+dst_ptr_t my_copy(ptr_t first, ptr_t last, dst_ptr_t dst_first)
+{
+	while(first != last)
+	{
+		*dst_first = *first;
+		++first;
+		++dst_first;
+	}
+	// return ...
+}
+
+c) replace
+// ptr_t : 
+//		!= ==
+//		dereference for both rvalue and lvalue
+//		++ pre and post
+//		iterator holds on to the location on dereferencing
+//		- forward iterator
+//			- also an input iterator
+//			- also an output iterator
+
+void my_replace(ptr_t first, ptr_t last, T oldvalue, T newvalue)
+{
+	while(first != last)
+	{
+		if(*first == oldvalue)
+		{
+			*first = newvalue;
+		}
+		++first;
+	}
+}
+
+// d. reverse
+// // ptr_t : 
+//		!= ==
+//		dereference for both rvalue and lvalue
+//		++ pre and post
+//		-- pre and post
+//		iterator holds on to the location on dereferencing
+//			bidirectional iterator
+//				also forward iterator
+// template<typename ptr_t>
+// void my_reverse(ptr_t first, ptr_t last) { }
+
+// e. sort
+// template<typename ptr_t>
+// void my_sort(ptr_t first, ptr_t last) { }
+
+// c pointers support :
+//		!= ==
+//		dereference for both rvalue and lvalue
+//		++ pre and post
+//		-- pre and post
+// 		pointer + int => pointer
+//		pointer - int => pointer
+//		pointer1 - pointer2 => int
+//		< <= > >= 
+//		random access iterator
+//			also bidirectional iterator
+
+// iterators:
+//	input iterator
+//	output iterator
+//	forward iterator
+//	bidirectional iterator
+//	random access iterator
+
+// A container class should support the most powerful iterator it can efficiently
+//	- list class shall not support random access
+//	- vector class shall support random access
+//		iterator + int => const time in vector; linear in list
+// An algorithm should demand the least powerful iterator it can play with.
+// bridge the container with algorithm using iterators
+// if there are n containers and m algorithms, we implement algorithms only m
+//		times
+
+// input iterator
+template<typename ptr_t>
+void disp(ptr_t first, ptr_t last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		++first;
+	}
+	cout << "\n";
+} 
+
+// random access
+template<typename ptr_t>
+void disp1(ptr_t first, ptr_t last)
+{
+	while(first < last)
+	{
+		cout << *first << "\t";
+		first += 1;
+	}
+	cout << "\n";
+} 
+
+
+// can we ever sort a list?
+/*
+whenever an algo can be implemented efficiently in a container,
+	it is provided as a member function
+	list.sort();
+
+set and map : sorted associative containers - implementation : ht balanced
+search tree:
+	generic find : linear
+	member find : logarithmic
+	 
+	
+*/
+
+		
+
+
+
+
+

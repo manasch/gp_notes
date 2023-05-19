@@ -1,0 +1,6 @@
+can a lambda function have control structures in C++?
+How does the compiler determine the return type of a Lambda function?
+How does bind work?
+How can you convert a function which requires two arguments to a function which
+	requires one argument with the other arguement fixed?
+	

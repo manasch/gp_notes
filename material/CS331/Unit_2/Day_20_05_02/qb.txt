@@ -1,0 +1,4 @@
+what is sequence point?
+what is the order of evaluation of operands in C++? in Java?
+How do we avoid order dependency in our expressions?
+

@@ -1,0 +1,23 @@
+Generic Programming : day 36-37; 5th March 2021
+so far,
+	STL Philosophy
+	predicates as expressions
+	
+--------------------------
+
+containers:
+- sequential containers
+	array
+	vector
+	deque
+	list
+- sorted associative containers
+	set
+	multiset
+	map
+	multimap
+- unordered containers
+	unordered_set
+	unordered_multiset
+	unordered_map
+	unordered_multimap

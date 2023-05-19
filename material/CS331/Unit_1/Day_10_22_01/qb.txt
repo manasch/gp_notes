@@ -1,0 +1,8 @@
+what is the concept of orthogonality of types? How is this helpful?
+
+Is the function call through a pointer to function resolved at compile time or runtime?
+Why?
+
+modify acc4 to find the biggest # in the array.
+
+

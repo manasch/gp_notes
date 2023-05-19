@@ -1,0 +1,39 @@
+template<typename ptr_t>
+void disp(ptr_t first, ptr_t last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		first += 1;
+	}
+	cout << "\n";
+} 
+ptr_t should be at least
+
+input iterator
+output iterator
+forward iterator
+none of these
+
+--------------
+
+This counts the # of elements in the sequence
+template<typename ptr_t>
+int my_count(ptr_t first, ptr_t last)
+{
+	int c(0);
+	while(first != last)
+	{
+		++c;
+		first += 1;
+	}
+	return c;
+} 
+
+does not work is the sequence is empty
+returns 1 if first == last in the beginning
+does not work with bidirectional iterator
+can be made more efficient if we know that the iterator is random access
+
+
+

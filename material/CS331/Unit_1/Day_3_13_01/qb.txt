@@ -1,0 +1,6 @@
+1. what is the meaning of giving a name to an abstraction?
+2. what are the possible abstraction of a house from
+   a) electical engineer's persective
+   b) water and sanitary engineer's persective
+3. What should a header file contain in C and C++?
+

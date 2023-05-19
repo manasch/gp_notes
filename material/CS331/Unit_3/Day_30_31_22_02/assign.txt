@@ -1,0 +1,6 @@
+Write your function for the following.
+a) count occurrence of a value
+b) rightmost find
+c) min
+d) max
+

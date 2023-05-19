@@ -1,0 +1,15 @@
+Generic Programming:
+day 18: 3rd Feb 2021
+
+so far:
+unit 2:
+class : fundamental operators
+		parameter passing and return from member functions
+		concept of const
+			const variable
+			const parameter
+			const return
+			const member function
+------------
+
+

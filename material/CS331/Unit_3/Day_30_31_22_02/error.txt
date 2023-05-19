@@ -1,0 +1,38 @@
+In file included from /usr/include/c++/10/algorithm:62,
+                 from 5_stl_philosophy.cpp:6:
+/usr/include/c++/10/bits/stl_algo.h: In instantiation of ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = std::_List_iterator<int>; _Compare = __gnu_cxx::__ops::_Iter_less_iter]’:
+/usr/include/c++/10/bits/stl_algo.h:4859:18:   required from ‘void std::sort(_RAIter, _RAIter) [with _RAIter = std::_List_iterator<int>]’
+5_stl_philosophy.cpp:61:23:   required from here
+/usr/include/c++/10/bits/stl_algo.h:1975:22: error: no match for ‘operator-’ (operand types are ‘std::_List_iterator<int>’ and ‘std::_List_iterator<int>’)
+ 1975 |     std::__lg(__last - __first) * 2,
+      |               ~~~~~~~^~~~~~~~~
+In file included from /usr/include/c++/10/bits/stl_algobase.h:67,
+                 from /usr/include/c++/10/bits/char_traits.h:39,
+                 from /usr/include/c++/10/ios:40,
+                 from /usr/include/c++/10/ostream:38,
+                 from /usr/include/c++/10/iostream:39,
+                 from 5_stl_philosophy.cpp:1:
+/usr/include/c++/10/bits/stl_iterator.h:500:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  500 |     operator-(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/10/bits/stl_iterator.h:500:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/10/algorithm:62,
+                 from 5_stl_philosophy.cpp:6:
+/usr/include/c++/10/bits/stl_algo.h:1975:22: note:   ‘std::_List_iterator<int>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+ 1975 |     std::__lg(__last - __first) * 2,
+      |               ~~~~~~~^~~~~~~~~
+In file included from /usr/include/c++/10/bits/stl_algobase.h:67,
+                 from /usr/include/c++/10/bits/char_traits.h:39,
+                 from /usr/include/c++/10/ios:40,
+                 from /usr/include/c++/10/ostream:38,
+                 from /usr/include/c++/10/iostream:39,
+                 from 5_stl_philosophy.cpp:1:
+/usr/include/c++/10/bits/stl_iterator.h:1533:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)’
+ 1533 |     operator-(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/10/bits/stl_iterator.h:1533:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/10/algorithm:62,
+                 from 5_stl_philosophy.cpp:6:
+/usr/include/c++/10/bits/stl_algo.h:1975:22: note:   ‘std::_List_iterator<int>’ is not derived from ‘const std::move_iterator<_IteratorL>’
+ 1975 |     std::__lg(__last - __first) * 2,
+      |               ~~~~~~~^~~~~~~~~

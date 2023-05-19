@@ -1,0 +1,11 @@
+can we have :
+pointer to pointer
+pointer to reference
+reference to reference
+reference to pointer
+array of pointers
+array of references
+?
+
+
+

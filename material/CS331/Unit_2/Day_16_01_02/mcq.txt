@@ -1,0 +1,28 @@
+class A
+{
+	public:
+	A& operator=(A&) const;
+};
+
+Signature of assignment operator
+ 
+is fine
+cannot change the lhs of assignment
+cannot change the rhs of assignment
+cannot return by reference
+
+
+A& foo()
+{
+	return ___;
+}
+
+return could be followed by for correct semantics
+
+any object
+local object
+static object
+none of these
+
+
+

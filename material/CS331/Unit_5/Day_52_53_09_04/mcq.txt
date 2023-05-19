@@ -1,0 +1,15 @@
+Which of the following is true?
+
+Comparable interface has a method compareTo which takes one argument
+Comparable interface has a method compareTo which takes two argument
+Comparable interface has a method compareTo which returns a boolean
+An object of a class implementing Comparable interface is passed as argument
+	to the sort function
+	
+Which of the following is true?
+myswap(a, b) can swap two variables if they are of value type
+myswap(a, b) can swap two variables if they are of reference type
+myswap(a, b) can swap two variables if they are objects of user defined type
+myswap(a, b) can never swap the two variables
+
+

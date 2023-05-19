@@ -1,0 +1,21 @@
+Which of the following is true?
+
+object of outer class contains an object of inner class
+object of outer class can access private members of an object of inner class
+size of outer class object does not include the size of the inner class
+inner class object can access members of the outer class
+
+class A
+{
+	public:
+	class B
+	{
+	};
+};
+How to make an object of class B?
+
+A.B x;
+B::A x;
+A::B x;
+B x;
+

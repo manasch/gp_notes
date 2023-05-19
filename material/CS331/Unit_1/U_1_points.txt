@@ -1,0 +1,654 @@
+Course : Generic Programming
+Instructor: N S Kumar
+contact details:
+nskumar@pes.edu
+kumaradhara@gmail.com
+ph:98450 66845
+facebook:nagabhushana satya kumar
+
+Timings:
+Mon, Tue, Wed : 8.15 - 9.00 am
+Thu, Fri : 12.15 - 1.00 pm
+
+Pre-requisites:
+- programming
+- C++ (required topics shall be covered)
+- not required to program in Java or C#
+
+setup:
+- ubuntu
+- gnu compilers C & C++
+  version 10.2
+- javac 14.02
+
+assessment:
+tentative
+ISA1 : 7 weeks; 3 units ; 30 points
+       lab component
+ISA2 : 4 weeks; 2 units : 20 points
+		lab component
+ESA : project : 20 points
+      written exam : 30 points
+      
+open notes
+not maths heavy
+not as difficult as adv algo
+requires lots of programming
+have to work hard
+-------------------------
+
+Generic programming:
+- sort
+	size of the data structure
+	type of each element
+	field(s) on which sorting should be affected
+	inplace?
+	stable?
+	comparison based or otherwise
+- linked list
+	
+
+
+different paradigms:
+
+
+
+
+
+
+
+
+
+
+
+      
+Sorting : generic algorithm
+list : generic data structure
+
+------------------
+paradigms in programming:
+1. procedural 
+2. object based 
+	class : mechanism to make our own type
+			user defined type
+			pure type : what we can do? does not say how we do it
+			class : what as well as how
+	type : set of values and set of operations
+	       operation : what and not how
+	       interface and implementation
+	object : variable of class type
+	- abstraction
+	- encapsulation
+	- composition
+3. object oriented 
+	- abstraction
+	- encapsulation
+	- composition
+	- inheritance
+	- polymorphism
+4. generic programming
+	- generic algorithms and generic data structures
+5. functional programming
+	- function : first class citizen of the language
+		- assignment, parameter passing, return
+	- math concept : pure
+		arguments immutable
+	- pure, re-entrant, thread safe ?
+	- currying?Currying is the technique of converting a function that takes multiple arguments into a sequence of functions that each take a single argument.
+	- may want to check : ranges C++ 20
+6. logic programming
+--------------------------------------------------------------------
+
+C++ :
+- programming language
+- features:
+	procedural
+	generic programming
+	functional features: 
+		lambda
+		functors
+	supports various levels of abstraction
+- multiparadigm language
+- multiple abstraction
+- type safety
+- efficiency
+
+1983 C++
+1998 C++ 98
+2003 C++ TR1
+2011 C++ 11
+2014 C++ 14
+2017 C++ 17
+2020 C++ 20
+
+----------------------------------------------------------------
+
+abstraction:
+- cheque in a bank
+	attributes:
+		ac no
+		cheque #
+		amt
+		payee's name
+		bank
+		branch
+		date
+		
+		size of the cheque
+		colour - bg and fg
+		quality of paper
+		font  :size, style
+		
+	behaviour:
+		deposit
+		withdraw
+		transfer
+		write
+		bounce
+		stop payment
+		
+printer's cheque
+banker's cheque	
+same entity looks different based on how we look at it - abstraction
+
+
+
+
+
+
+
+
+
+
+
+	
+	       
+
+- books :
+  C++ templates : Josutis
+  STL Tutorial and reference : Musser ...
+
+- functional programming
+  C : functional ? NO
+- C : object oriented ?
+  directly no
+  implement OO concepts as a design pattern in 'C'
+
+----------------------------------------------------
+Object Oriented concepts:
+Interface and implementation:
+Interface, once published, cannot be withdrawn
+withdrawing will break the existing code
+becomes a maintenance nightmare
+
+task: Scott Meyers : the most important design guideline
+- youtube
+
+1. Abstraction :
+	selecting what is essential
+	ignoring what is not essential
+	depends on the observer
+	
+	also give a name for it
+	
+2. encapsulation :
+	put things together
+	put attributes and behaviour together
+	
+	hide what could change
+	expose what should not change
+	
+	hide the implementation
+	expose the interface
+	
+	not a security concept
+	
+3. 
+	
+	
+
+so far we have discussed:
+- different paradigms
+- object oriented paradigm
+  features of an object oriented language
+  	abstraction
+  	encapsulation
+  	...
+-------------------------------------
+
+composition: an attribute of a class is an object
+of another class
+object within an object
+embedding or layering or containment or aggregation
+reuse mechanism
+-------------------------------------
+
+- concept constants and variables
+- attributes of variable:
+	name:
+		no name ? 
+		temporarily variables : no name; cannot be
+			accessed
+		dynamic variables : no name; access thro
+			a pointer
+	location
+		data segment; stack; heap
+		// totally compiled lang : C++, Java, ...
+		//	type : compile time mechanism
+		//	value : runtime mechanism
+	type
+		set of values
+		set of operations
+	value
+		initial  value?
+			depends on storage class
+			data segment : initialized to 0
+				variables are mapped to 0 filled pages	
+				do not initialize each variable separately
+			others : not initialized
+			using an uninitialized variable : undefined
+				behaviour
+		variable is used uninitialized?
+		create  a variable only when we know how to initialize
+	size :
+		C++ : depends on the implementation
+			find using sizeof
+		Java : sizes are fixed by the language
+		
+		int a = 10; int b;
+		b = sizeof(a = 20);
+		// sizeof(int) //  expr of sizeof is not 
+		//				converted to machine code
+		//				not evaluated
+		
+		// a : 10
+		// b : sizeof(int)
+		// C++ : compile time table lookup
+		
+			
+	scope : visibility
+	
+	intent : make a variable only when required
+			 make the variable name meaningful
+			 // refer : CleanCode  : Robert Martin
+			 	
+	life time : existence
+	
+	storage class
+		automatic	: no keyword auto for this in C++ 11
+							onwards
+		global
+		static
+		extern
+		
+	int a = 10; // on the data segment; global variable
+	// life time : throughout the program
+	void foo()
+	{
+		// global variable a
+		printf("%d\n", a); // 10
+	}
+	void bar()
+	{
+		int a = 20; // local a; automatic variable
+		// on the stack
+		// global variable is masked off
+		// hole-in-scope for the global variable
+		printf("%d\n", a); // 20
+		printf("%d\n", ::a); // 10; global variable
+	}
+	
+	int b = 5;
+	{
+		int b = 10;
+		{
+			int b = 20;
+			// local b ; value 20
+			// global b; ::b ; value 5
+			// can never access variable of the 
+			//	outer block
+		}
+	}
+	
+	check: definite assignment rule : Java; vars must always be initialized, else compile time error
+	
+day 5: 16th Jan 2021
+queries:
+    would a static variable be an example of, "A variable with a lifetime but with no scope", after its purpose has been fulfilled in the program? 
+        For example, if a function contains a static variable, then once that function is not used any further in the program (i.e. no more calls to that function), the static variable is still in memory, but not accessible.
+        
+     answer later
+    
+       
+        
+    what is meant by "A variable can be in multiple places at the same time?"
+	memory, cache, register
+	cache of multiple processor
+
+-----------------------------------------------
+
+so far we have discussed:
+- concept constants and variables
+- attributes of variable:
+	name:
+	location
+	type
+	value
+		create  a variable only when we know how to initialize
+	size :
+		C++ : depends on the implementation
+			find using sizeof
+		Java : sizes are fixed by the language
+	scope : visibility
+	intent : make a variable only when required
+			 make the variable name meaningful
+			 // refer : CleanCode  : Robert Martin
+	life time : existence
+	storage class
+		automatic	: no keyword auto for this in C++ 11
+							onwards
+		global
+		static
+		extern
+		
+----------------------
+variable:
+	declaration : indicates the type; only for the compiler
+	definition : causes allocation of memory
+		definition is also a declaration
+	initialization : putting a value to a variable at the point of definition
+		more efficient
+		not an expression
+		RAII : Resource acquisition is initialization
+	assignment : putting a value to a variable anywhere else
+	
+	
+	
+	
+		
+day 6 : 18th Jan 2021
+query:
+why 
+#include <iostream> and not <iostream.h>?
+
+iostream.h : all names introduced globally
+iostream : all names introduced in a wrapper
+- namespace - this namespace called std
+
+to use any C header file with namespace concept, prefix c to the name
+#include <math.h> => #include <cmath>
+
+
+
+so far,
+variables and functions
+function prototype
+
+prototype or function declaration or signature:
+1. match arguments to parameters
+	#, type and/or order
+2. overloading
+3. default parameters
+
+---------------
+
+argument to parameter matching:
+1. exact match or trivial conversion
+   array => pointer
+   variable => const
+   derived class object => base class object
+   
+2. generic function
+
+3. promotion
+	int and double are preferred integral and
+	float types respectively
+	conversion of integral types  to int
+	float types to double 
+	without loss of precision
+	
+	2.0 => 2 std conversion
+	
+4. std conversion
+	numeric conversion
+	not pointer convertion
+	no ranking 
+	
+5. user defined conversions
+	single argument constructor
+	type conversion operator
+	
+6. type unsafe conversions
+	pointer => void*
+	variable number of arg
+	
+------------------------------------
+
+overloading:
+- compile time mechanism
+- more than one function has the same name
+- names are mangled or decorated by the compiler
+- linker is agnostic to overloading concept
+- names should be unique to the linker
+- mangling is compiler dependent
+- has to be in the same scope
+- same abstraction; but different implementation
+
+------------------------------------
+template function:
+- compile time mechanism
+- results in a set of overloaded functions
+------------------------------------
+use :
+https://cppinsights.io/
+
+
+
+			
+
+
+   
+
+Generic programming
+day 7 :
+so far :
+function prototype
+overloading
+argument parameter matching
+intro to generic function
+-----------------
+
+we discussed:
+pointer and reference
+
+template function is instantiated : generates a function with specific types
+based on the call
+instantiation of template function results in overloaded functions
+instantiation per type and not per call
+	compared to macro, code generated is less
+	less code bloat problem
+	
+- implicit instantiation
+	compiler deduces the type based on argument parameter matching
+- explicit instantiation
+	specify a list of types in angle brackets between the fn name and 
+		left parenthesis in the call
+		
+
+queries:
+
+pointer to pointer - eg: int **p;
+pointer to reference - eg: int& (*p);
+//*p=20 throws error. *p is a reference, which is constant.
+reference to reference - eg: int& (&r);
+//r=20 throws error. *r is a reference, which is constant.
+reference to pointer - eg: int* (&r);
+array of pointers - eg: int* (a[SIZE]);
+array of references - eg: int &(a[SIZE]);
+
+ans: we can create 
+pointer to a pointer
+reference to a  pointer
+	int a(10);
+	int* p(&a);
+	int* &r(p)
+	
+pointer to a reference : not possible
+reference to reference : not possible
+&& : this different
+& & : not meaningful
+------------------------------------
+
+--
+    what are the casting rules for pointers in C and C++?
+    ans: casting
+    static_cast<type>(expr)
+    const_cast<type>(expr)
+    	deemed const
+    	manifest const
+    dynamic_cast<type>(expr)
+    reinterpret_cast<type>(expr)
+    
+    in the object file, why does the order of functions show up differently (when probing the object file using the nm command) from the original order they appeared in, inside the translation unit?
+    ans:undefined
+    
+    what are the benefits and drawbacks of pass-by-name parameter passing which was a feature of Algol and Tcl?
+    ans: access earlier activation
+     
+------------
+significance T and W
+where do template functions reside?
+'S0_'?
+-----------
+   when we created a local declaration of the function void f(char) in the main-function, then did the compiler forget all global declarations/definitions of function f only, or for other functions as well?
+   ans: only f
+        For example, if we had another function called void abc(int) in the global space and a local declaration of void f(char) in the main-function, then would void abc(int) be forgotten, by the compiler, in the main-function, because of the local declaration of void f(char) in the main-function?
+    Why is the conversion of int to any floating-point type not considered as type promotion? As in the case of double, it is a type with a wider range and size while for float, it is a type with the same size as int but has a wider range due to its representation format.
+  ans: int : exact representation
+  		float value : approximately stored
+  		  
+---------------
+day 8:  20th Jan 2021
+so far,
+function:
+prototype
+matching of arg to para
+overloading
+template
+-----------
+
+template instantiation results in overloading
+algorithms are same : templates
+algorithms are different : overloading
+
+two ways of instantiation:
+a) implicit 
+b) explicit
+
+
+
+
+
+Generic Programming : day 9 : 21st Jan 2021
+queries:
+
+could you please check if these are the right answers for mcq.txt?
+1. b) pointer to a
+        //Sir, what does line-3 do?
+2. c) 1000 + sizeof(int) * 5
+
+in qb.txt, is this right for the first question?
+1. distinguish value and reference semantics
+In a Reference Semantics expression, the arguments refer to the original objects.
+While, in a Value Semantics expression, the arguments refer to copies of the values in the objects.
+
+reference semantics for equality : references should refer to the same object
+value semantics for equality : referrents are compared
+
+
+so far,
+template functions
+implicit instantiation
+explicit instantiation
+specialization 
+	no partial specialization C+ 2020
+-------------------------
+
+
+Generic Programming - Day 10 - 22nd Jan 2020
+
+Generic Programming
+day 10: 22nd Jan 2020
+
+queries:
+- value and reference semantics
+	have a value => value semantics
+	have a pointer or a reference => 
+		compare directly : reference sematics
+		get the value by dereferencing and then compare : value semantics
+
+	int a(10); int b(10);
+	int *p(&a); int *q(&b); int *r(&a);
+	 p == q  : reference semantics
+	 p == r :  reference semantics
+	 
+	 *p == *q : value semantics
+	 
+
+- Are they guaranteed to be allocated continuously? Is it possible that if a page of the program is fragmented, an array will be allocated in multiple memory "holes"? If this is true, will traversing the array by pointer arithmetic (ie, first++), not be guaranteed to work all the time?
+	ans: allocation of an array or of a block dynamically is always contiguous
+		in virtual memory
+
+- pointer + int => undefined ?
+	defined as long as the result is within the array
+	may overflow
+	int a(10); &a + 5 => works; may overflow
+	
+
+- virtual address and physical address
+
+- Today in the Generic Programming class you said that casting a pointer is dangerous but you still say that in inheritance we use the base class pointer for a derived class object . I also remember 
+you casting one such pointer(derived class pointer to base class pointer) in the Design Pattern class today when you were talking about inheritance
+- 
+
+so far :
+variables
+functions
+templates
+array traversal
+
+
+
+
+day11 : Generic programming : 23rd Jan 2021
+
+queries:
+Question --> Is the function call through a pointer to function resolved at compile time or run time and why ??
+refer: 1_ex.cpp 2_ex.cpp 3_ex.cpp
+function call thro a pointer resolved at runtime
+
+related hijacking: In the context of today's discussion, would it be possible in any way
+to use the concept of template for generating these functions for a
+given set of functions?
+ans:
+we can by using variadic templates : each function can have diff parameters
+how to get the function name to call back?
+
+default { }
+
+int init = 0;
+=>
+T init = 0;
+=>
+T init = T(); 
+=>	
+T init{};
+// possible
+
+---------------------------------------
+
+orthogonality of type:
+
+
+
+

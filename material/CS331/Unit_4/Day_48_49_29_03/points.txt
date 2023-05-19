@@ -1,0 +1,4 @@
+Generic Programming : day 48-49 : 29th March 2021
+so far,
+	discussing STL
+	

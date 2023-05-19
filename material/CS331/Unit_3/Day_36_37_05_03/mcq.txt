@@ -1,0 +1,37 @@
+struct Test
+{
+	bool operator()(const string& s1, const string& s2)
+	{
+		return s1[0] < s2[0];
+	}
+};
+set<string, Test> s("raja", "rama", "mohan", "roy");
+The number of elements in the set s is
+2
+1
+4
+3
+
+class Date
+{
+	private:
+	int dd_;
+	int mm_;
+	int yy_;
+	public:
+	Date(int dd = 1, int mm = 1, int yy = 1970);
+	friend bool operator<(const Date&, const Date&);
+	// ...
+}
+
+map<string, Date> m;
+use of m["unix"] as an expression causes 
+
+compile time error
+runtime exception
+the value for unix to become Date(1, 1, 1970)
+the value for unit to become Date(0, 0, 0)
+
+
+
+

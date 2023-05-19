@@ -1,0 +1,7 @@
+What are the differences between callback using pointer to function and
+	callback using a functor?
+	State the reasons for the differences.
+
+What is the reason we should declare the ctor of MyVector class as explicit?
+What happens if we do not do it?
+

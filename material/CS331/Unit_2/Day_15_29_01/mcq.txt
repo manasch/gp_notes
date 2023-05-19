@@ -1,0 +1,22 @@
+void foo(const int& );
+Which of the following will not compile?
+
+const int a(10); foo(a);
+int a(10); foo(a);
+const int a; foo(a);
+int a; foo(a);
+
+class A
+{
+	char a[20];
+};
+
+Assume these objects have been initialized suitably.
+A a1("rama"); A a2("krishna");
+what happens if we have the statement
+a2 = a1;
+
+compile time error; arrays cannot be assigned
+dangling pointer
+garbage leading memory leak
+none of these

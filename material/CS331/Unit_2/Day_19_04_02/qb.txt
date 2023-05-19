@@ -1,0 +1,7 @@
+what are characteristics of a friend function? When do we use it?
+
+can a member of one class be a friend of another?
+can a function be a friend of two different classes simultaneously?
+
+
+

@@ -1,0 +1,14 @@
+write a template function to read into an array.
+Test it for int, double.
+
+Test it for Complex.
+Test it for Date.
+provide suitable functions in these classes.
+
+
+Write a function to add elements of an array of int.
+Make this function a template.
+Experiment with
+	array of double
+	array of Complex.
+provide suitable functions in this class.

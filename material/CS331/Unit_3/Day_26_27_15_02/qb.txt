@@ -1,0 +1,6 @@
+When is a template class instantiated?
+When are the functions in a template class instantiated?
+
+Instantiation of a template class requires specification of type. 
+Can we avoid that by writing a wrapper function while creating an object?
+

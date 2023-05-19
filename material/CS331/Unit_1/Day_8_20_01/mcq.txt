@@ -1,0 +1,30 @@
+int a(10);
+int b(20);
+r = b;
+int& r(a);
+
+&r gives
+
+pointer to r
+pointer to a
+pointer to b
+error
+
+-------
+
+template<typename T>
+T what(T x)
+{
+	return x + 5;
+}
+int a(100);
+// &a is equal to 1000
+int *p(&a);
+what is returned if we call what(p)?
+
+a) 1005
+b) 105
+c) 1000 + sizeof(int) * 5
+d) none of these
+
+

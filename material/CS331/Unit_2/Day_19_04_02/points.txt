@@ -1,0 +1,24 @@
+Generic Programming:
+day 19: 4th Feb 2021
+
+so far:
+unit 2:
+class : fundamental operators
+		parameter passing and return from member functions
+		concept of const
+			const variable
+			const parameter
+			const return
+			const member function
+		operator functions
+		single argument constructor : explicit
+------------
+
+operator functions:
+	syntactic sugar
+	still a function
+	never intent operator
+	change the behaviour of builtin types
+	precedence, association and rank/arity as in C++
+	a few operators of C++ can be overloaded
+	

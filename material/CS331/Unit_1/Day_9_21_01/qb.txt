@@ -1,0 +1,25 @@
+void disp(int* first, int* last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		++first;
+	}
+	cout << "\n";
+}
+double b[] = {1.2, 3.4, 5.6, 7.8};
+disp(b, b + 4);
+State the two reasons why this not work?
+
+Would this work?
+Compare with the one discussed in the class.
+template<typename T>
+void disp(T* first, T* last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		++first;
+	}
+	cout << "\n";
+}

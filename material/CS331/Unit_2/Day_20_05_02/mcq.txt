@@ -1,0 +1,15 @@
+which of the following is correct?
+
+assignment should be a member and equality operator should be a friend
+assignment should be a friend and equality operator should be a member
+both should be friends
+none of these
+
+i = 2;
+a[i] = i++;
+
+i becomes 3 and a[3] becomes 3
+i becomes 3; value of i++ is 2; so a[3] becomes 2
+i becomes 3; value of i++ is 2; so a[2] becomes 3
+unspecified behaviour
+

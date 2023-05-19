@@ -1,0 +1,115 @@
+2_bind.cpp: In function ‘int main()’:
+2_bind.cpp:21:27: error: no matching function for call to ‘bind(<unresolved overloaded function type>, int, int)’
+   21 |  auto f1 = bind(sub, 11, 3);
+      |                           ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:785:5: note: candidate: ‘template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  785 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:785:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:21:27: note:   couldn’t deduce template parameter ‘_Func’
+   21 |  auto f1 = bind(sub, 11, 3);
+      |                           ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:809:5: note: candidate: ‘template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  809 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:809:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:21:27: note:   couldn’t deduce template parameter ‘_Result’
+   21 |  auto f1 = bind(sub, 11, 3);
+      |                           ^
+2_bind.cpp:24:56: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<1>&, const std::_Placeholder<2>&)’
+   24 |  auto f2 = bind(sub, placeholders::_1, placeholders::_2);
+      |                                                        ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:785:5: note: candidate: ‘template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  785 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:785:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:24:56: note:   couldn’t deduce template parameter ‘_Func’
+   24 |  auto f2 = bind(sub, placeholders::_1, placeholders::_2);
+      |                                                        ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:809:5: note: candidate: ‘template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  809 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:809:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:24:56: note:   couldn’t deduce template parameter ‘_Result’
+   24 |  auto f2 = bind(sub, placeholders::_1, placeholders::_2);
+      |                                                        ^
+2_bind.cpp:28:28: error: no matching function for call to ‘bind(<unresolved overloaded function type>, int, const std::_Placeholder<1>&)’
+   28 |  auto f3 = bind(sub, 13, _1);
+      |                            ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:785:5: note: candidate: ‘template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  785 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:785:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:28:28: note:   couldn’t deduce template parameter ‘_Func’
+   28 |  auto f3 = bind(sub, 13, _1);
+      |                            ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:809:5: note: candidate: ‘template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  809 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:809:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:28:28: note:   couldn’t deduce template parameter ‘_Result’
+   28 |  auto f3 = bind(sub, 13, _1);
+      |                            ^
+2_bind.cpp:33:28: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<2>&, const std::_Placeholder<1>&)’
+   33 |  auto f4 = bind(sub, _2, _1);
+      |                            ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:785:5: note: candidate: ‘template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  785 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:785:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:33:28: note:   couldn’t deduce template parameter ‘_Func’
+   33 |  auto f4 = bind(sub, _2, _1);
+      |                            ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:809:5: note: candidate: ‘template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  809 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:809:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:33:28: note:   couldn’t deduce template parameter ‘_Result’
+   33 |  auto f4 = bind(sub, _2, _1);
+      |                            ^
+2_bind.cpp:39:47: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<1>&, const std::_Placeholder<2>&)’
+   39 |  function<int(int, int)> f6 = bind(sub, _1, _2);
+      |                                               ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:785:5: note: candidate: ‘template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  785 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:785:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:39:47: note:   couldn’t deduce template parameter ‘_Func’
+   39 |  function<int(int, int)> f6 = bind(sub, _1, _2);
+      |                                               ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:809:5: note: candidate: ‘template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  809 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:809:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:39:47: note:   couldn’t deduce template parameter ‘_Result’
+   39 |  function<int(int, int)> f6 = bind(sub, _1, _2);
+      |                                               ^
+2_bind.cpp:42:43: error: no matching function for call to ‘bind(<unresolved overloaded function type>, int, const std::_Placeholder<1>&)’
+   42 |  function<int(int)> f7 = bind(sub, 100, _1);
+      |                                           ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:785:5: note: candidate: ‘template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__is_socketlike<_Func>::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  785 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:785:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:42:43: note:   couldn’t deduce template parameter ‘_Func’
+   42 |  function<int(int)> f7 = bind(sub, 100, _1);
+      |                                           ^
+In file included from 2_bind.cpp:6:
+/usr/include/c++/10/functional:809:5: note: candidate: ‘template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)’
+  809 |     bind(_Func&& __f, _BoundArgs&&... __args)
+      |     ^~~~
+/usr/include/c++/10/functional:809:5: note:   template argument deduction/substitution failed:
+2_bind.cpp:42:43: note:   couldn’t deduce template parameter ‘_Result’
+   42 |  function<int(int)> f7 = bind(sub, 100, _1);
+      |                                           ^

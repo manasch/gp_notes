@@ -1,0 +1,480 @@
+Generic Programming: day12 : 25th Jan 2021
+Queries:
+compile time or runtime ? 
+// Dhruva Kashyap
+#include <stdio.h>
+void foo() { printf("foo\n"); }
+void bar() { printf("bar\n"); }
+int main()
+{
+    void (*p)();
+    p = foo;
+    p();
+    p = bar;
+    p();
+}
+on gcc -S test.c, main executes the following
+leaq foo(%rip), %rax
+movq %rax, -8(%rbp)
+movq -8(%rbp), %rdx
+movl $0, %eax
+call *%rdx
+leaq bar(%rip), %rax
+movq %rax, -8(%rbp)
+movq -8(%rbp), %rdx
+movl $0, %eax
+call *%rdx
+showing that calls are resolved at run time.
+And on compiling with gcc -S -O3 test.c
+subq $8, %rsp
+.cfi_def_cfa_offset 16
+xorl %eax, %eax
+call foo
+xorl %eax, %eax
+call bar
+Calls are resolved at compile time. 
+----------------
+My doubt is wrt the parameter " bool (*comp)(const T&, const T&) " given in the assign.txt.
+If we implement " bool comparator(const T& x, const T& y) " and pass comparator as an argument, then isn't it still a compile-time mechanism, sir (unless we make comp1 and comp2 with same types)?
+So, can we say that not all calls through function pointer are run-time mechanisms
+--------------------
+For the parameter bool (*comp)(const T&, const T&), the function prototype bool comparator<char *>(char * const& x, char * const& y) worked.
+------------------------
+separating value type, reference type and pointer type	
+------------------------
+
+ends unit 1
+-----------
+
+begin unit 2
+-----------
+
+class :
+	a user defined type
+	not a pure type
+	type + implementation
+	
+	
+C++ : In this context, keywords : class and structure have the semantics
+      access control : class : implementation ; private
+      					struct : interface : public
+      					
+Fundamental operations:
+constructor
+destructor
+copy constructor
+copy assignment operator
+---------
+move constructor
+move assignment operator
+----------------------------
+
+constructor:
+	member function of a class
+	does not create an object
+	initialize an object
+		not just putting values to the attributes
+		acquiring resources
+			allocate memory
+			open file
+			acquire mutex
+			p operation on semaphore
+			attach to shared memory
+	whenever an object is created ctor has to be called 
+	
+	name: classname
+	no return type
+	can have parameters
+	can be overloaded
+	default ctor : has no parameters or all parameters are default
+	vanishes when we write our own ctor
+	
+	
+
+destructor:     
+	member function of a class
+	de-initialize the object
+		release the resources
+	always called when an object dies
+	
+	name : ~classname
+	no return type
+	no parameters
+	cannot be overloaded
+	default dtor 
+	vanishes when we write our own dtor
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+ 						
+
+
+
+
+Generic Programming : Day 13 : 27th Jan 2021
+
+So far,
+class
+constructor
+destructor
+new operator ; delete operator
+new[] operator ; delete[] operator
+
+-------------------
+
+
+
+Generic Programming : day 14 : 28th Jan 2021
+
+Unit 2:
+class
+	data members
+	member functions
+		constructor
+		destructor
+		
+Generic Programming ; day 15 : 29th Jan 2021
+
+unit 2:
+concept of class:
+fundamental operators:
+	ctor
+	dtor
+	...
+	
+----------------
+
+empty string : ""
+null string : nullptr
+
+----------------
+// first phase : lexical analyzer 
+// follows regular expression
+// matches the string :
+//	leftmost
+//	eager
+//	greedy
+
+// single ctor with default values
+Person(char *= "", int = 0); //compile time errors
+// *= becomes a token 
+Person(char * = "", int = 0); // ok
+
+// <  < >> : used to be an error : 2003 TR1 : should not be an error
+
+//   a---b
+//		compile time error
+//		a-- - b 
+//		a - --b
+// ?
+
+// --1   NO
+// - -1  ok
+
+-------------------
+assignment
+
+
+
+Generic Programming:
+day 16 : 1st Feb 2021
+
+so far:
+unit 2:
+discussing canonical form of a class
+discussed
+- constructor
+- destructor
+
+discussing
+- assignment operator
+
+-----------
+
+Generic Programming:
+day 17 : 2nd Feb 2021
+
+so far:
+unit 2:
+discussing canonical form of a class
+discussed
+- constructors
+- destructor
+- copy assignment
+- copy ctor
+-----------
+
+Generic Programming:
+day 18: 3rd Feb 2021
+
+so far:
+unit 2:
+class : fundamental operators
+		parameter passing and return from member functions
+		concept of const
+			const variable
+			const parameter
+			const return
+			const member function
+------------
+
+
+Generic Programming:
+day 19: 4th Feb 2021
+
+so far:
+unit 2:
+class : fundamental operators
+		parameter passing and return from member functions
+		concept of const
+			const variable
+			const parameter
+			const return
+			const member function
+		operator functions
+		single argument constructor : explicit
+------------
+
+operator functions:
+	syntactic sugar
+	still a function
+	never intent operator
+	change the behaviour of builtin types
+	precedence, association and rank/arity as in C++
+	a few operators of C++ can be overloaded
+	
+Generic Programming : day 20 : 5th Feb 2021
+so far:
+	class
+	fundamental operators
+	member functions - parameter passing and return
+	constness
+	operator function
+	single arg ctor - explicit
+	friend function
+friend function :
+	another interface of the class
+	seldom have friends
+	use friend function:
+		operator does not require an object on the left 
+		position of operand is not right 
+		when convention demands
+		
+// Scott Meyers : Effective C++
+// Cline and Marshll : C++ FAQ
+----------------------------------
+friend class : friend class and friend function : orthogonal
+----------------------------------
+
+operator functions:
+=  : assignment : member
+arithmetic operators : + - * / % : friend
++= -= ... : member
+++ -- : member
+relational operators : < <= > >= == != : friend
+& | ^ << >> ~ : friend
+&= ... : member
+logical operator : && ||   : NO
+logical operator : !  member
+sizeof typeid : NO
+?: : NO
+operator new, operator delete : yes
+-> * : members
+:: .   NO; compile time operators
+------------------------------
+The C puzzle book : Feuer
+------------------------------
+int a; int b;
+a = 10;
+b = a * a ++;  // 110 or 100 : unspecified
+	10	10
+	11 
+
+b is 100 101 110
+
+x + y * z
+evaluation of expr:
+1. evaluation of operands
+	fetching operands to the registers of the CPU
+2. evaluation of operators
+	precedence
+	association
+a + a * a : how many times should we load a?
+C/C++ : order of eval of operands is not defined
+JAVA : always left to right
+
+sequence point: guarantees all side effects shall be complete
+
+a = 1;
+a || --a
+
+|| : sequence point
+1 || 0 => true
+a++ + a : not specified
+a++ || a : well defined
+
+short ckt eval
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+	
+Generic Programming: day 21 : 8th Feb 2021
+so far,
+	class
+	fundamental functions
+	friend function
+	operators
+	
+-----------------------------	
+
+query:
+file descriptor table -> global file table -> vnode table -> inode -> ptr to data
+
+open the same file again -> another entry in global file table -> same entry vnode
+	-> ptr to data
+
+dup -> same entry in global file table -> vnode table -> inode -> ptr to data
+----------------------------
+
+function to the left of assignment : possible
+f(x) = 10; 
+f(x) returns a reference
+return obj is temporary : may refer to something which has a name
+---------------------------
+
+side effect - sequence point 
+&& || ,   => sequence point => evaluate left to right 
+&& || : short ckt eval
+
+a++ + a : not specified
+a++ , a : well specified
+for(e1, e2; ...; e3, e4) ...
+printf("%d", (3, 4));
+
+a[i] = i++; // unspecified ...
+--------------------------
+
+MyLogical l1; MyLogical l2;
+l1 || l2 => operator||(l1, l2)
+can we evaluate the args left to right? NO
+can we stop eval if left operand is true? NO
+should not overload logical operators && || , comma ?
+
+friend __ operator,(type1 a, type2 b);
+type1 X;
+type2 Y;
+X, Y;
+--------------------
+
+?: : cannot be overloaded
+sizeof : overloaded
+:: . : compile time operators
+--------------------
+
+
+----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+Generic Programming : day 22 : 9th Feb 2021
+so far,
+	class
+	fundamental operators
+	friend function
+	operator functions
+-----------------------
+operators:
+++
+<
+Generic Programming : day 23 : 10th Feb 2021
+so far,
+	class
+	fundamental operators
+	friend function
+	operator functions
+-----------------------
+
+Generic Programming : day 24: 11th Feb 2021
+
+so far:
+class
+fundamental operators
+operator function
+friend function
+callback : pointer to function or functor (object of a class
+	supporting the function call operator)
+	
+differences between call thro pointer to function and call thro functor
+
+1. pointer to function
+a)
+	compiler cannot decide which fn is getting called
+	runtime mechanism
+	code cannot be inlined
+b)  has no state info	
+	
+2. functor
+a) 
+	compiler can makeout which fn is getting called
+	resolution is at compile time
+	code can be inlined
+b) can have state info
+
+Generic Programming: day25 : 12th Feb 2021
+- functors
+- accumulate with functors
+
+
+class within a class :
+	nested class (inner class)
+	two possible reasons
+	- hide the class
+	- implementation of the inner class depends on the outer class

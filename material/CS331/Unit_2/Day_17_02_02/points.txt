@@ -1,0 +1,13 @@
+Generic Programming:
+day 17 : 2nd Feb 2021
+
+so far:
+unit 2:
+discussing canonical form of a class
+discussed
+- constructors
+- destructor
+- copy assignment
+- copy ctor
+-----------
+

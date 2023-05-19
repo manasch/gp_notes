@@ -1,0 +1,20 @@
+a is an array of some component type.
+sort(a, a + 5, Test());
+What can we say about the third argument?
+
+Test() is an object of the class supporting function operator which
+	takes two arguments and returns a boolean
+Test() is an object of the class supporting < operator
+Test() is a functor call
+Test() is an object of the class supporting function operator which
+	takes one argument and returns a boolean
+----------
+
+find(a, a + 5, Foo())
+a is an array of some component type.
+
+Foo is a function which returns an object of component type of the array a
+Foo should be a functor class
+Foo() is a function call which returns a callable back
+Foo is a class which implements == operator
+

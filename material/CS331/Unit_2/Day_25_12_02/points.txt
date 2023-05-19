@@ -1,0 +1,10 @@
+Generic Programming: day25 : 12th Feb 2021
+- functors
+- accumulate with functors
+
+
+class within a class :
+	nested class (inner class)
+	two possible reasons
+	- hide the class
+	- implementation of the inner class depends on the outer class

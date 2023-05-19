@@ -1,0 +1,29 @@
+can a lambda function have control structures in C++? yee
+How does the compiler determine the return type of a Lambda function? return var type or suggested by ->
+How does bind work? curry
+How can you convert a function which requires two arguments to a function which
+	requires one argument with the other arguement fixed? bind
+	
+what is the role of functor in adjacent difference? 
+What is the difference between erase of vector and algorithm remove?
+How could one write the algorithm remove?
+
+How is vector<bool> specialized from vector<T>? adress is struct type
+How do we implement pointer and reference type in such a case? struct val type
+
+How do we develop mapping of one type to another? traits and specialization
+
+What is dependent type? How do we determine the type in such a case? typename?
+
+What are the different types in iterator_traits? 
+How could these be useful.
+
+Observe the overrides of iterator_traits for T* and const T* types.
+Why do we have these differences?
+
+find distance between a pair of iterators. Make this as efficient as possible
+based on iterator category.
+
+what is the use of move?
+What do move ctor and move assignment operator do?
+

@@ -1,0 +1,127 @@
+1. What are the different aspects to be considered while sorting a data structure?
+
+2. What do these terms mean?
+   stable sorting
+   inplace sorting
+   external sorting
+   non-comparison based sorting
+   sentinel
+   
+1. what is the concept of type?
+
+2. what is a class?
+
+3. what is the difference between object oriented and object based programming?
+
+4. What would an object of a class have?
+
+1. what is the meaning of giving a name to an abstraction?
+
+2. what are the possible abstraction of a house from
+   a) electical engineer's persective
+   b) water and sanitary engineer's persective
+   
+3. What should a header file contain in C and C++?
+
+1. 
+what is namespace in C++ or package in Java?
+How does this affect life and scope?
+What can these contain?
+
+2. distinguish between
+	life and scope
+	static and global in 'C'
+	static in function and static in class in C++
+	
+3. what are the different meanings of static in Java?
+
+1. what the different steps in matching of arguments to parameters?
+
+2. Can we compile multiple C++ translations using different compilers on the
+   same OS and same architecture and link and run them together?
+   
+3. How to call 
+	C++ function from C
+	C function from C++?	
+
+1. when to use templates and when to use overloading?
+
+2. Observe the name mangling of 
+	normal functions
+	and those created by the template mechanism.
+	Why that difference?
+	
+3. Can we declare a template function in header,
+   define in an implementation file and invoke in 
+   another translation?
+   Give reasons.
+   
+can we have :
+pointer to pointer
+pointer to reference
+reference to reference
+reference to pointer
+array of pointers
+array of references
+?
+
+distinguish value and reference semantics
+
+distinguish between overloading and template?
+How does template specialization work?
+
+Why should the template function be defined in the header
+file and not a separate implementation file?
+
+What is the significance of W in the output of nm command?
+
+How does the linker handle multiple instantiation of
+the a function for the same type in different translation?
+
+
+void disp(int* first, int* last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		++first;
+	}
+	cout << "\n";
+}
+
+double b[] = {1.2, 3.4, 5.6, 7.8};
+disp(b, b + 4);
+State the two reasons why this not work?
+
+Would this work?
+Compare with the one discussed in the class.
+template<typename T>
+void disp(T* first, T* last)
+{
+	while(first != last)
+	{
+		cout << *first << "\t";
+		++first;
+	}
+	cout << "\n";
+}
+
+what is the concept of orthogonality of types? How is this helpful?
+
+Is the function call through a pointer to function resolved at compile time or runtime?
+Why?
+
+modify acc4 to find the biggest # in the array.
+
+void foo()
+{
+	cout << "foo called\n";
+}
+
+	void (*p)();
+	p = foo;
+	p();
+This call to the function thro' the pointer is normally a runtime mechanism.
+Can the compiler optimize to make this a compile time mechanism?
+What if p is declared volatile?
+------------------

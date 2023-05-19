@@ -1,0 +1,8 @@
+1. what the different steps in matching of arguments to parameters?
+2. Can we compile multiple C++ translations using different compilers on the
+   same OS and same architecture and link and run them together?
+3. How to call 
+	C++ function from C
+	C function from C++?
+	
+	

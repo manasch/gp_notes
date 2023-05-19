@@ -1,0 +1,67 @@
+Generic Programming : 15th Feb 2021
+Day 26-27:
+so far,
+	variables
+	functions
+	template functions
+	classes
+		fundamental operators
+		operator functions
+	friend
+	
+	accumulate:
+		orthogonality of template types
+		value type : T
+		pointer type : ptr_t
+		operation type : binop_t
+		
+	a pair of pointers abtracts away the container
+	
+resolution of overloading:
+
+class A
+{
+	private:
+	void foo(double);
+	public:
+	void foo(int);
+};
+
+A x; x.foo(2.54);
+
+1) C++
+- find candidate functions
+- find the best match
+- check for access
+2) Java
+- find candidate functions
+- check for access
+- find the best match
+
+end unit 2
+--------------------------
+ISA1 :
+	on the computer
+	30 points
+		15 points : writing (into the computer)
+		15 points : 2 pgms you will execute
+--------------------------
+unit 3 :
+class : templates, specialization, typedef and using
+Introduction to STL :
+- data structures and algorithms
+containers
+algorithms
+functors
+adaptors
+
+
+--------
+cohesion : entity should address one and only one issue
+			single reason for change
+coupling : relationship between entities
+
+high cohesion and low coupling
+		
+
+

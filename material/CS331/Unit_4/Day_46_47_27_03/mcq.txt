@@ -1,0 +1,22 @@
+which of the following is true?
+
+move ctor provides a place holder where stealing of resource can be implemented
+move ctor automatically provides stealing of resource
+destructor is not called on the object passed as argument to move ctor as
+	the object is no more active
+move ctor is a class requires that we also implement move dtor
+
+class A
+{
+	private:
+	int a1;
+	int a2;
+};
+void foo(A&& rhs);
+This does not imply
+
+that rhs can be changed
+that fields in rhs (like a1 and a2) can be changed
+that the function should be invoked using move on the argument of type A
+that rhs is a rvalue
+

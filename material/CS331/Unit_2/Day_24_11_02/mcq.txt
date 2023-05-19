@@ -1,0 +1,13 @@
+functor class has the following operator overloaded.
+
+operator[]
+operator *
+operator ->
+operator()
+
+which of the following is false?
+
+operator() can be overloaded based on # of arguments
+operator&& should not be overloaded
+operator+ can be unary or binary
+operator* should return a lvalue

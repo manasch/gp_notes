@@ -1,0 +1,16 @@
+which of the following is true?
+
+A class has one and only destructor
+A class can have more than one destructor
+The destructor of the class cannot be called explicitly
+Name of the destructor is used defined
+
+
+A *p = new int(5);
+
+creates a dynamic array of 5 elements
+creates a single integer initialized to 5
+will always have book keeping
+none of these
+
+

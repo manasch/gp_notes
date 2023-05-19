@@ -1,0 +1,32 @@
+day11 : Generic programming : 23rd Jan 2021
+
+queries:
+Question --> Is the function call through a pointer to function resolved at compile time or run time and why ??
+refer: 1_ex.cpp 2_ex.cpp 3_ex.cpp
+function call thro a pointer resolved at runtime
+
+related hijacking: In the context of today's discussion, would it be possible in any way
+to use the concept of template for generating these functions for a
+given set of functions?
+ans:
+we can by using variadic templates : each function can have diff parameters
+how to get the function name to call back?
+
+default { }
+
+int init = 0;
+=>
+T init = 0;
+=>
+T init = T(); 
+=>
+T init{};
+// possible
+
+---------------------------------------
+
+orthogonality of type:
+
+
+
+

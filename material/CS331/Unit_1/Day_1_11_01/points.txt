@@ -1,0 +1,64 @@
+Course : Generic Programming
+Instructor: N S Kumar
+contact details:
+nskumar@pes.edu
+kumaradhara@gmail.com
+ph:98450 66845
+facebook:nagabhushana satya kumar
+
+Timings:
+Mon, Tue, Wed : 8.15 - 9.00 am
+Thu, Fri : 12.15 - 1.00 pm
+
+Pre-requisites:
+- programming
+- C++ (required topics shall be covered)
+- not required to program in Java or C#
+
+setup:
+- ubuntu
+- gnu compilers C & C++
+  version 10.2
+- javac 14.02
+
+assessment:
+tentative
+ISA1 : 7 weeks; 3 units ; 30 points
+       lab component
+ISA2 : 4 weeks; 2 units : 20 points
+		lab component
+ESA : project : 20 points
+      written exam : 30 points
+      
+open notes
+not maths heavy
+not as difficult as adv algo
+requires lots of programming
+have to work hard
+-------------------------
+
+Generic programming:
+- sort
+	size of the data structure
+	type of each element
+	field(s) on which sorting should be affected
+	inplace?
+	stable?
+	comparison based or otherwise
+- linked list
+	
+
+
+different paradigms:
+
+
+
+
+
+
+
+
+
+
+
+      

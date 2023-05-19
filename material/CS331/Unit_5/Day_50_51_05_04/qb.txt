@@ -1,0 +1,8 @@
+Java related:
+what is single rooted hierarchy?
+What is the difference between value(primitive) types and reference types?
+What is boxing and unboxing?
+Why do generics work only on reference types?
+what is type erasure?
+Why we cannot have static fields in generic types?
+

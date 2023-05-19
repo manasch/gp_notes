@@ -1,0 +1,7 @@
+Should an algorithm depend on the most powerful iterator or the least powerful
+iterator? Why?
+What type of iterator should a container support?
+Why are the following functions implemented in the class?
+	sort on list
+	find on set and map : which are ht balanced binary search tree
+	

@@ -1,0 +1,45 @@
+Generic Programming - Day 10 - 22nd Jan 2020
+
+Generic Programming
+day 10: 22nd Jan 2020
+
+queries:
+- value and reference semantics
+	have a value => value semantics
+	have a pointer or a reference => 
+		compare directly : reference sematics
+		get the value by dereferencing and then compare : value semantics
+
+	int a(10); int b(10);
+	int *p(&a); int *q(&b); int *r(&a);
+	 p == q  : reference semantics
+	 p == r :  reference semantics
+	 
+	 *p == *q : value semantics
+	 
+
+- Are they guaranteed to be allocated continuously? Is it possible that if a page of the program is fragmented, an array will be allocated in multiple memory "holes"? If this is true, will traversing the array by pointer arithmetic (ie, first++), not be guaranteed to work all the time?
+	ans: allocation of an array or of a block dynamically is always contiguous
+		in virtual memory
+
+- pointer + int => undefined ?
+	defined as long as the result is within the array
+	may overflow
+	int a(10); &a + 5 => works; may overflow
+	
+
+- virtual address and physical address
+
+- Today in the Generic Programming class you said that casting a pointer is dangerous but you still say that in inheritance we use the base class pointer for a derived class object . I also remember 
+you casting one such pointer(derived class pointer to base class pointer) in the Design Pattern class today when you were talking about inheritance
+- 
+
+so far :
+variables
+functions
+templates
+array traversal
+
+
+
+

@@ -1,0 +1,305 @@
+which of the following is true?
+
+CCCC A class has one and only destructor
+A class can have more than one destructor
+The destructor of the class cannot be called explicitly
+Name of the destructor is used defined
+
+
+A *p = new int(5);
+
+creates a dynamic array of 5 elements
+CCCC creates a single integer initialized to 5
+will always have book keeping
+none of these
+
+
+1. which of the following is true?
+	
+CCCC dtor can be called explicitly as object.~classname()
+ctor can be called explicitly as object.classname()
+ctor does not have this pointer
+dtor does not have this pointer
+
+2. this
+
+CCCC is a pointer which becomes a parameter when a function of the class is called
+is a member of an object of a class
+is a pointer to a constant
+is a reference which becomes a parameter when a function of the class is called
+
+class A
+{
+	A(int = 1, int = 2);
+};
+
+A a1(10, 20); is ok
+A a2(30); is ok
+A a3;  is ok
+CCCC none of these
+
+class A
+{
+	public:
+	A(char *p = 0);
+	~A();
+};
+
+A::A(char *p) : p_(p) { }
+A::~A() { delete p_; }
+
+delete p_ deletes whatever p points to - no matter to which segment p points to.
+delete p_ fails if p_ is initialized to 0
+delete p_ fails if p_ points to location on the heap
+CCCC none of these
+
+void foo(const int& );
+Which of the following will not compile?
+
+const int a(10); foo(a);
+int a(10); foo(a);
+CCCC const int a; foo(a);
+int a; foo(a);
+//////foo(10) is also ok
+class A
+{
+	char a[20];
+};
+
+Assume these objects have been initialized suitably.
+A a1("rama"); A a2("krishna");
+what happens if we have the statement
+a2 = a1;
+
+compile time error; arrays cannot be assigned
+dangling pointer
+garbage leading memory leak
+CCCC none of these
+
+class A
+{
+	public:
+	A& operator=(A&) const;
+};
+
+Signature of assignment operator
+ 
+is fine
+CCCC cannot change the lhs of assignment
+cannot change the rhs of assignment
+cannot return by reference
+
+
+A& foo()
+{
+	return ___;
+}
+
+return could be followed by for correct semantics
+
+any object
+local object
+CCCC static object
+none of these
+
+
+
+class Complex
+{
+	public:
+	Complex(double = 0.0, double);
+	// ...
+};
+
+CCCC compile time error in declaration
+runtime time error if one argument is passed
+works fine - takes the argument passed as the 2nd parameter
+none of these
+
+
+class Complex
+{
+	public:
+	Complex(double = 0.0, double);
+	void disp() const;
+	// ...
+};
+
+void Complex::disp() definition can have the following statement.
+
+Complex z; this = &z;
+this->rp_ = 100;
+CCCC Complex z; z.rp_ = 200;
+Complex z(this);
+
+
+
+
+what is true of operator functions?
+
+require no linking phase - compiler puts the code for operators
+compiler catches if a function called + does subtraction
+operator functions are runtime mechansim
+CCCC operator* can be overloaded based on arity
+
+which of the following is false?
+operator+ can take one or two operands
+CCCC operator++ prefix and postfix will have the same semantics
+operator() can be overloaded based on # of parameters
+operator functions can be free functions
+
+a and b are objects of class X.
+a += b
+This expression requires that
+
+we define + and  =
+we define + and the class will gave = by default
+CCCC we define += 
+none of these
+
+a is an object of class X.
+~a
+
+is call to dtor
+is a builtin operator by default
+CCCC is translated to a.operator~()
+none of these
+
+which of the following is correct?
+
+CCCC assignment should be a member and equality operator should be a friend
+assignment should be a friend and equality operator should be a member
+both should be friends
+none of these
+
+i = 2;
+a[i] = i++;
+
+i becomes 3 and a[3] becomes 3
+i becomes 3; value of i++ is 2; so a[3] becomes 2
+i becomes 3; value of i++ is 2; so a[2] becomes 3
+CCCC unspecified behaviour
+
+template<typename ptr_t>
+void what(ptr_t first, ptr_t last)
+{
+	cout << first << " " << last << "\n";
+}
+
+Date d[5] = { ... };
+what(d, d + 5);
+
+for this function to compile,
+
+class Date should overload << on date type
+class Date should overload << on pointer to date type
+class Date should write its own copy ctor
+CCCC none of these
+
+------------------
+
+template<typename ptr_t>
+ptr_t what(ptr_t first)
+{
+	return ++first;
+}
+Date d[5] = { ... };
+what(d);
+
+for this compile, 
+class Date should overload pre_increment
+class Date should overload both pre_increment & post_increment
+class Date should overload copy ctor
+CCCC class Date need not support any special operator
+
+
+
+
+
+
+
+
+call to pre increment operator 
+
+causes two extra objects and four extra function calls
+causes one extra object  and two extra function calls
+causes return of a rvalue
+CCCC none of these
+
+Which of the following is syntactically correct?
+class B
+{
+	// ...
+};
+class A
+{
+	public:
+	// fill here
+};
+
+B operator B();
+B operatorB();
+operatorB();
+CCCC operator B();
+
+
+
+
+
+class Ex;
+Ex()(); // this compiles
+
+This implies that the class Ex
+
+has a default ctor and not function call operator
+has no default ctor and has function call operator
+CCCC has both default ctor and function call operator
+cannot decide
+
+template<typename T>
+void myswap(T& x, T& y)
+{
+	T temp; temp = x; x = y; y = temp;
+}
+The requirements on type T are
+
+CCCC assignment and default ctor
+assignment and copy ctor
+copy ctor and default ctor
+default ctor and relation operator for equality
+
+functor class has the following operator overloaded.
+
+operator[]
+operator *
+operator ->
+CCCC operator()
+
+which of the following is false?
+
+operator() can be overloaded based on # of arguments
+operator&& should not be overloaded
+operator+ can be unary or binary
+CCCC operator* should return a lvalue
+
+Which of the following is true?
+
+object of outer class contains an object of inner class
+object of outer class can access private members of an object of inner class
+CCCC size of outer class object does not include the size of the inner class
+inner class object can access members of the outer class
+
+class A
+{
+	public:
+	class B
+	{
+	};
+};
+How to make an object of class B?
+
+A.B x;
+B::A x;
+CCCC A::B x;
+B x;
+

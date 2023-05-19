@@ -1,0 +1,20 @@
+template<typename T1 = int>
+class A { };
+
+Which of the following in not valid instantiation?
+
+A<int> a
+A<A<int>> a
+A<char> a
+A a
+
+int a[] = {1, 2, 3, 4, 5};
+vector<int> v(a, a + 4);
+vector v has
+
+2 elements
+5 elements
+no elements - results in syntax error
+4 elements
+
+

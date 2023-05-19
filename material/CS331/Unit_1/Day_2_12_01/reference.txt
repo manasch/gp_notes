@@ -1,0 +1,12 @@
+*
+The Most Important Design Guideline?
+
+by Scott Meyers
+https://www.aristeia.com/Papers/IEEE_Software_JulAug_2004_revised.htm
+
+https://www.youtube.com/watch?v=TdajK_SXwoc&t=27s
+
+* why you should avoid linked list
+
+by Bjarne Stroustrup
+https://www.youtube.com/watch?v=YQs6IC-vgmo&t=32s

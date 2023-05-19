@@ -1,0 +1,19 @@
+In which of the cases, ctor and/or dtor called? when?
+
+global object
+external static object
+local object
+internal static object
+dynamic object
+pointer 
+reference
+
+2.
+// can we call the dtor explicitly?
+// 	a2.~()
+// if the dtor can be called, and is called, does the object die?
+// if the dtor can be called, and is called, object does not die - 
+//	would the dtor be called when the object does die?
+// can we call the ctor explicitly?
+//	a2.A() 
+	

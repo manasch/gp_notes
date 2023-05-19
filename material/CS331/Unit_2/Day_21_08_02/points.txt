@@ -1,0 +1,72 @@
+Generic Programming: day 21 : 8th Feb 2021
+so far,
+	class
+	fundamental functions
+	friend function
+	operators
+	
+-----------------------------	
+
+query:
+file descriptor table -> global file table -> vnode table -> inode -> ptr to data
+
+open the same file again -> another entry in global file table -> same entry vnode
+	-> ptr to data
+
+dup -> same entry in global file table -> vnode table -> inode -> ptr to data
+----------------------------
+
+function to the left of assignment : possible
+f(x) = 10; 
+f(x) returns a reference
+return obj is temporary : may refer to something which has a name
+---------------------------
+
+side effect - sequence point 
+&& || ,   => sequence point => evaluate left to right 
+&& || : short ckt eval
+
+a++ + a : not specified
+a++ , a : well specified
+for(e1, e2; ...; e3, e4) ...
+printf("%d", (3, 4));
+
+a[i] = i++; // unspecified ...
+--------------------------
+
+MyLogical l1; MyLogical l2;
+l1 || l2 => operator||(l1, l2)
+can we evaluate the args left to right? NO
+can we stop eval if left operand is true? NO
+should not overload logical operators && || , comma ?
+
+friend __ operator,(type1 a, type2 b);
+type1 X;
+type2 Y;
+X, Y;
+--------------------
+
+?: : cannot be overloaded
+sizeof : overloaded
+:: . : compile time operators
+--------------------
+
+
+----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

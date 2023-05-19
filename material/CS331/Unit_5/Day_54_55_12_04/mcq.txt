@@ -1,0 +1,31 @@
+class R
+{
+	public int zzz
+	{
+		get
+		{
+			return 1729;
+		}
+	}
+}
+Which of the following is correct?
+
+R.zzz
+R().zzz
+new R().zzz
+new R.zzz()
+
+----------------------
+
+delegate void fnptr_t()
+This implies that
+
+fnptr_t is callable
+fn_ptr_t() is callable
+fn_ptr_t f;  f is callable
+static void f() { } ; fn_ptr_t f = new fn_ptr_t(f); f is callable
+
+
+
+
+

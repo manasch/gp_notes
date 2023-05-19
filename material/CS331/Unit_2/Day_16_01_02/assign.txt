@@ -1,0 +1,16 @@
+1. create a class MyVector.
+   It should have 
+   int n_;
+   int* p_;
+   In the constructor, allocate a block of n int to p.
+   Provide ctors, dtor, assignment op and copy constructor.
+   Write functions to add vectors.
+   
+2. create a class MyMatrix.
+	It shold have
+	int m_;
+	int n_;
+	int *p_;
+   In the constructor, allocate a block of m X n int to p.
+   Provide ctors, dtor, assignment op and copy constructor.
+   Write functions to add matrices.	

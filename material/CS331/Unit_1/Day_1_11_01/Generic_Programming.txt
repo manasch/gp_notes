@@ -1,0 +1,28 @@
+Objectives:
+* master the concepts of Generic Programming
+* learn to develop generic algorithms and generic data structures
+* learn and apply the concepts of the Standard Template Library
+* apply c++ - concepts at compile time
+* master template metaprogramming
+* master Generics in C# and Java
+
+
+1. Introduction to Generic Programming - constants, variables, types and concepts - Generic Algorithms - Generic Containers
+   C++ template functions - function call resolution - type and non-type parameter - implicit and explicit instantiation - partial and complete specialiation - use of auto and lambda in conjuction with templates - C++ concepts
+   C++ template class - implicit and explicit instantiation - specialization 
+   
+2. Callbacks - object closure and functors; Iterator
+   Philosophy of STL - brief introduction to containers, algorithms, iterators, adaptors, functors and allocator
+   Understand the STL interface - Solve problems using STL
+
+3. Template Metaprogramming - programming with types at compile time
+   - Traits & policies
+
+4. Design of user defined containers, algorithms and iterators
+
+5. 
+	C# generics - Generic type parameter - constraints - classes, interfaces, methods, delegates - Generics and reflection
+
+   Java generics - type erasure - constraints - Java collections
+   and algorithms
+

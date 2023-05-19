@@ -1,0 +1,21 @@
+which of the following is true?
+
+template instantiation creates a set of overloaded functions.
+templates are runtime mechansim
+templates are instantiated for every call
+template parameters should be of builtin types
+
+which of the following is false?
+
+functons can be overloaded based on difference in
+order of parameters
+
+functions can be overloaded based on difference in
+return type
+
+functions can be overloaded based on difference in
+type of parameters
+
+functions can be overloaded based on # of parameters
+
+ 

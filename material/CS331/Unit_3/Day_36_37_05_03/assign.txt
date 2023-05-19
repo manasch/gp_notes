@@ -1,0 +1,11 @@
+a) Develop vector of person's name and date of birth.
+Develop map of month and # of people born in that month
+
+b) create a map of author's name(string) and a vector of his books.
+Display all.
+Find the number of books of each of the authors.
+Find the author who has the highest # of books
+
+c) create a map of map of vector : lang => author => title.
+Develop functions to play with them.
+

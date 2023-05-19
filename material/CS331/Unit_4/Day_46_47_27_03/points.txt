@@ -1,0 +1,7 @@
+Generic Programming : day 46-47 : 27th March 2021
+so far,
+	discussing STL
+	traits
+	
+----------
+

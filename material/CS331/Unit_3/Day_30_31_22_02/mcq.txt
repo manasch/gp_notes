@@ -1,0 +1,25 @@
+while(first != last)
+{
+	// some code
+	++first;
+	// some code
+	++first;
+}
+
+undefined behaviour of the range defined by the iterator has odd # of elements
+undefined behaviour of the range defined by the iterator has even # of elements
+will always terminate after executing the body of the loop half the # of elements times
+none of these
+
+
+while(first != last && *first != t)
+{
+	++*first;
+}
+
+will exit if first = last in the beginning
+will exit if the first element becomes equal t after a  few increments
+will be an undefined behaviour if t < *first as the loop is entered
+none of these
+
+

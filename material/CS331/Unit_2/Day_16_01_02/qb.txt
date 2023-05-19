@@ -1,0 +1,11 @@
+Distinguish between assignment and copy ctor.
+
+In which cases is the copy ctor called?
+
+When we can return by reference? How do we avoid using the return value
+to the left of assignment?
+
+What does 'const member function' mean?
+
+
+

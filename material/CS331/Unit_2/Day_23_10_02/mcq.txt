@@ -1,0 +1,22 @@
+class Ex;
+Ex()(); // this compiles
+
+This implies that the class Ex
+
+has a default ctor and not function call operator
+has no default ctor and has function call operator
+has both default ctor and function call operator
+cannot decide
+
+template<typename T>
+void myswap(T& x, T& y)
+{
+	T temp; temp = x; x = y; y = temp;
+}
+The requirements on type T are
+
+assignment and default ctor
+assignment and copy ctor
+copy ctor and default ctor
+default ctor and relation operator for equality
+

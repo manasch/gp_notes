@@ -1,0 +1,5 @@
+Why do we require the concept of a class?
+What is RAII?
+can we call a ctor explicitly?
+can we call a dtor explicitly?
+

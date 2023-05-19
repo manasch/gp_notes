@@ -1,0 +1,28 @@
+Generic Programming:
+Project Component : 20 points
+- possible ideas :
+	implement a data structure
+	implement iterator
+	make this work with algorithms
+	
+	or
+	
+	implement an algorithm
+	make this work with iterators of different builtin data structures
+	
+	
+- team size : 3 or 2
+- submit by next week :
+	team (names of members)
+	abstract (5 to 10 lines)
+- evaluation :
+	any time before the final day of ESA
+	give a demo (max 10-15 min)
+	will suggest changes
+	complete in the next two hours and resubmit
+	
+- deliverables :
+	share the code
+	share a readme file (100 lines)
+	
+			

@@ -1,0 +1,6 @@
+What are predicates? How are they different from functors?
+How does sort compare the elements by default? How do we sort a sequence of
+	user defined objects?
+Can we overload template functions with the same # of arguments?
+Why find with predicate does not overload the algorithm find?
+

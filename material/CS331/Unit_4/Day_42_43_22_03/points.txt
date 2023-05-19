@@ -1,0 +1,21 @@
+Generic Programming : day 42-43 : 22nd March 2021
+discussing STL
+	algorithms
+	
+---------------
+	
+vector<int> v;
+value type : int
+pointer type : int*
+reference type : int&
+
+vector<bool> vb{false, true, false};
+vb[2] = true;
+&vb[2]
+vector<bool>::iterator it;
+...
+value type ? bool
+reference type? struct
+pointer type? struct
+
+---------------------	

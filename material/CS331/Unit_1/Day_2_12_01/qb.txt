@@ -1,0 +1,5 @@
+1. what is the concept of type?
+2. what is a class?
+3. what is the difference between object oriented and object based programming?
+4. What would an object of a class have?
+

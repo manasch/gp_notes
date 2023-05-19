@@ -1,0 +1,12 @@
+1. 
+what is namespace in C++ or package in Java?
+How does this affect life and scope?
+What can these contain?
+
+2. distinguish between
+	life and scope
+	static and global in 'C'
+	static in function and static in class in C++
+	
+3. what are the different meaninds of 	static in Java?
+

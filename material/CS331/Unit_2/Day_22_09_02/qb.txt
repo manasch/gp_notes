@@ -1,0 +1,6 @@
+why should one prefer preincrement over postincrement?
+What is the canonical form of writing postincrement operator?
+How does the compiler distinguish between pre increment and post increment calls?
+Why is postincrement a rvalue and preincrement a lvalue?
+what is type conversion operator? Can we specify this as explicit?
+

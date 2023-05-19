@@ -1,0 +1,7 @@
+what is the concept of interface in Java?
+How does Java support callback through anonymous inner class?
+What are the two different ways to make sort of an array flexible?
+	comparable interface?
+	comparator inerface?
+	
+	

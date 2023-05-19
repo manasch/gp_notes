@@ -1,0 +1,14 @@
+1. when the fields of sorting of records of data structure are changed in 
+a comparison based sorting,
+a) loop initializations have to be changed
+b) loop terminations have to be changed
+c) sort algorithm should be totally changed
+d) none of these
+
+2. Linked list is made of nodes having key field and link field.
+   Changing the key field affects the following operations.
+a) initialization of list
+b) removal of list
+c) traversal of list
+d) none of these
+

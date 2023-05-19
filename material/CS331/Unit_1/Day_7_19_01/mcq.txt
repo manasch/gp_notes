@@ -1,0 +1,13 @@
+template function is instantiated for
+
+every function call
+every function call with argument of a different type
+every function call with argument of different value
+none of these
+
+explicit instantiation requires that
+
+we specify the types in angle bracker before the function name in the call
+we specify the types in angle bracker between the function name and left parenthesis
+we specify the types along with arguments within parentheses in the call
+none of these

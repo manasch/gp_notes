@@ -1,0 +1,8 @@
+Generic Programming : day44-45 : 26th March 2021
+so far,
+	playing with types
+	traits
+	types within containers
+	
+-----------------
+

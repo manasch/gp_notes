@@ -1,0 +1,13 @@
+1. which of the following is true?
+	
+dtor can be called explicitly as object.~classname()
+ctor can be called explicitly as object.classname()
+ctor does not have this pointer
+dtor does not have this pointer
+
+2. this
+
+is a pointer which becomes a parameter when a function of the class is called
+is a member of an object of a class
+is a pointer to a constant
+is a reference which becomes a parameter when a function of the class is called

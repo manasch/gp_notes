@@ -1,0 +1,13 @@
+1) which of the following is true?
+
+address of a global variable will not change during the program execution
+a variable exists at only one place
+size of variable depends on the value assigned to it
+none of these
+
+2) int a = 10;int b;if(a > 5) b = 20;what happens if we execute this code in Java and in C++?
+
+compile time error in Java and ok in C++
+compile time error in C++ and ok in Java
+ok in both
+none of these

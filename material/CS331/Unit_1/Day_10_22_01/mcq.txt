@@ -1,0 +1,28 @@
+template<typename T1, typename T2>
+T2 foo(T1 t1)
+{
+	// ...
+}
+which of the following will compile?
+
+foo(10);
+foo<int>(10);
+foo<double, int>(10);
+foo(10, 2.5);
+
+----------------
+
+template<typename T>
+T foo(T x)
+{
+	return *x * *x;
+}
+
+For this work,
+
+the type T should support multiplication and dereferencing
+the type T should support dereferencing and T* should support multiplication
+the type to which T points to should support multiplication and dereferencing
+none of these
+
+

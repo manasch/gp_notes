@@ -1,0 +1,10 @@
+Complex add(...)
+what are the issues in returning 
+	a static object by reference?
+	a dynamic object by reference?
+	
+What is return object optimization?
+
+What is incorrect in providing a function to add three complex objects?
+
+

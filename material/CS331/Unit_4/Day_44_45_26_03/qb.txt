@@ -1,0 +1,9 @@
+What are the different types in iterator_traits?
+How could these be useful.
+
+Observe the overrides of iterator_traits for T* and const T* types.
+Why do we have these differences?
+
+find distance between a pair of iterators. Make this as efficient as possible
+based on iterator category.
+

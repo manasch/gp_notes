@@ -1,0 +1,14 @@
+Generic Programming : day 54_55 : Generics in other languages
+
+OO design:
+Designing Flexible Object Oriened systems using UML : Richter
+principles of programming languages : Pratt ...
+
+
+Java:
+
+C#:
+books by Don Box
+Essential COM
+Essential dotnet
+

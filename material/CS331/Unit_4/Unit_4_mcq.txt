@@ -1,0 +1,131 @@
+int main()
+{
+	function<void(void)> f;
+	{
+		int n = 100;
+		f = [&n]() { n += 100; cout << n << "\n";};
+	}	
+	f();
+}
+
+output is 200
+output is 100
+compile time error
+CCC undefined behaviour  *
+
+-----------
+
+int add(int x, int y) { return x + y; }
+
+int main()
+{
+	function<int(int)> f = bind(add, placeholders::_1, placeholders::_1);
+	cout << f(10) << "\n";
+}
+
+CCC output is 20 *
+output is 10
+error in bind : _1 specified twice
+error in bind : f should have two parameters specified in <>
+
+min_element returns the position of the smallest in the range - could be based
+on a predicate. The algorithm is linear. 
+So,
+
+The predicate should be unary
+CCC The predicate should be binary
+Need not be a predicate - could be any functor
+returns the smallest element
+
+
+What is true of adjacent_difference?
+
+requires 2 arguments
+can have a unary predicate
+CCC 0th element of output is same as the 0th element of input
+0th element of output is difference of 1st and 0th elements of input 
+template<typename T1, typename T2>
+class A { }; // first
+template<typename T1,typename T2>
+class A<T1*, T2*> { } // second
+
+A<10, 10> x;
+
+CCC results in syntax error
+instantiates the first template class
+instantiates the second template class
+results in runtime error
+
+
+template<typename T>
+struct MyTraits;
+
+template<>
+struct MyTraits<int>
+{
+	using RT = long;
+};
+template<>
+struct MyTraits<char>
+{
+	using RT = int;
+};
+
+class MyTraits<int>::RT x;
+
+CCC syntax error
+x is of type long
+x is of type int
+no error; names class and typename can be used interchageably
+
+
+Finding mid point in vector 
+
+has to be a linear algorithm
+CCC can be const time
+is logarithmic
+none of these
+
+Finding distance between two iterators is
+
+linear in list iterators and linear in vector iterators
+CCC linear in list iterators and const time in vector iterators
+const time in list iterators and const time in vector iterators
+none of these
+
+which of the following is true?
+
+CCC move ctor provides a place holder where stealing of resource can be implemented
+move ctor automatically provides stealing of resource
+destructor is not called on the object passed as argument to move ctor as
+	the object is no more active
+move ctor is a class requires that we also implement move dtor
+
+class A
+{
+	private:
+	int a1;
+	int a2;
+};
+void foo(A&& rhs);
+This does not imply
+
+that rhs can be changed
+that fields in rhs (like a1 and a2) can be changed
+that the function should be invoked using move on the argument of type A
+CCC that rhs is a rvalue
+
+deleting a node from a list
+
+invalidates all iterators, references and pointers
+CCC invalides only the iterator, reference and pointer referring to the deleted node*
+invalides only pointers and references and not iterators
+none of these
+
+which of the following is true?
+CCC emplace avoids call to copy ctor*
+when size of vector reaches half capacity, the vector is resized
+capacity of vector is always less than the size of vector
+capacity of vector is always less than or equal to the capacity
+
+

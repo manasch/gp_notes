@@ -1,0 +1,36 @@
+Box b = new Box();
+b.put(25);
+int x = b.get();
+
+class Box
+{
+	private Object o;
+	public Object get() { return o; }
+	public void put(Object o) { this.o = o; } 
+}
+Comment about the line : int x = b.get();
+
+x becomes 25
+x will refer to a location on the heap which is 25
+This statement generates a runtime error
+None of these  
+
+----------
+
+class Box<T>
+{
+	private T o;
+	public T get() { return o; }
+	public void put(T o) { this.o = o; } 
+}
+
+		Box<String> s = new Box<String>();
+		s.put(25);
+		String s1 = s.get();
+		
+s1 becomes 25
+s.get() requires casting to string
+s.put(25); generates runtime error
+s.put(25); generates compile time error		
+		
+

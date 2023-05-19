@@ -1,0 +1,52 @@
+template<typename ptr_t>
+void disp(ptr_t first, ptr_t last)
+{
+	while(first != last)
+	{
+		disp_one(*first);
+		++first;
+	}
+	cout << "\n";
+}
+Write suitable disp_one function or functions to display
+a) array of int
+b) array of double
+c) array of c strings
+d) array of structures having a couple of fields - 
+	name : array of char
+	age : int
+--------------
+template<typename T>
+void mysort(T a[], int n, bool (*comp)(const T&, const T&))
+{
+	int i;
+	int j;
+	for(i = 0; i < n - 1; ++i)
+	{
+		for(j = i + 1; j < n; ++j)
+		{
+			if(! comp(a[i], a[j]))
+			{
+				myswap(a[i], a[j]);
+			}
+		}
+	}
+}
+
+use this sort using comparator to
+a) sort an array of int
+b) sort an array of double
+c) sort an array of c strings
+d) sort an array of structures : having name : array of char, age: int
+	- in order of name
+	- in decreasing order of age
+	
+-------------
+write generic search function to find 
+a) the key in an array
+b) the key which satisfies a particular condition
+
+
+
+
+	

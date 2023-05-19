@@ -1,0 +1,99 @@
+Generic Programming : day 20 : 5th Feb 2021
+so far:
+	class
+	fundamental operators
+	member functions - parameter passing and return
+	constness
+	operator function
+	single arg ctor - explicit
+	friend function
+friend function :
+	another interface of the class
+	seldom have friends
+	use friend function:
+		operator does not require an object on the left 
+		position of operand is not right 
+		when convention demands
+		
+// Scott Meyers : Effective C++
+// Cline and Marshll : C++ FAQ
+----------------------------------
+friend class : friend class and friend function : orthogonal
+----------------------------------
+
+operator functions:
+=  : assignment : member
+arithmetic operators : + - * / % : friend
++= -= ... : member
+++ -- : member
+relational operators : < <= > >= == != : friend
+& | ^ << >> ~ : friend
+&= ... : member
+logical operator : && ||   : NO
+logical operator : !  member
+sizeof typeid : NO
+?: : NO
+operator new, operator delete : yes
+-> * : members
+:: .   NO; compile time operators
+------------------------------
+The C puzzle book : Feuer
+------------------------------
+int a; int b;
+a = 10;
+b = a * a ++;  // 110 or 100 : unspecified
+	10	10
+	11 
+
+b is 100 101 110
+
+x + y * z
+evaluation of expr:
+1. evaluation of operands
+	fetching operands to the registers of the CPU
+2. evaluation of operators
+	precedence
+	association
+a + a * a : how many times should we load a?
+C/C++ : order of eval of operands is not defined
+JAVA : always left to right
+
+sequence point: guarantees all side effects shall be complete
+
+a = 1;
+a || --a
+
+|| : sequence point
+1 || 0 => true
+a++ + a : not specified
+a++ || a : well defined
+
+short ckt eval
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+	

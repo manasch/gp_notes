@@ -1,0 +1,117 @@
+Why do we require the concept of a class? interfaces
+What is RAII? resource acquisition is initialization
+can we call a ctor explicitly? not thro an obj
+can we call a dtor explicitly? yes
+
+In which of the cases, ctor and/or dtor called? when?
+
+global object:	univ,univ
+external static object: univ univ
+local object: block
+internal static object: first call
+dynamic object: new
+pointer: no
+reference: no
+
+2.
+// can we call the dtor explicitly?
+// 	a2.~()
+// if the dtor can be called, and is called, does the object die?
+// if the dtor can be called, and is called, object does not die - 
+//	would the dtor be called when the object does die? yeah
+// can we call the ctor explicitly?
+//	a2.A() nien
+	
+what is wrong with the following code?
+Person(char *= "", int = 0); // ECE students may ignore this
+
+Does the destructor remove memory allocated to an object?	nope
+
+Why is ctor always called when an object is initialized?	that's what a ctor does
+
+Discuss the return mechanism.
+	when to return by value
+	when to return by reference	life exist
+	when to return by reference to const? life exists but not lvalue
+	
+if the class contains a file descriptor field,
+and a file is opened in the ctor and closed in the dtor
+	what happens on default assignment?	depends on what default is for file(stdin?)
+	what happens if we call dup in the assignment operator?
+
+
+
+Distinguish between assignment and copy ctor.
+
+In which cases is the copy ctor called?	init thro an object,return,parameter passing
+
+When we can return by reference? How do we avoid using the return value
+to the left of assignment? life exiss in calling env. const
+
+What does 'const member function' mean? no modify this
+
+
+
+Complex add(...)
+what are the issues in returning 
+	a static object by reference? only 1
+	a dynamic object by reference? breaking floe
+	
+What is return object optimization? return A(),no copy ctor
+
+What is incorrect in providing a function to add three complex objects? 2 more common, can use 2 for 3 how do i use for adding 2, cascade how?
+
+
+what is return object optimization?
+How do we call a ctor explicity? in such a case, does the compiler create an object?
+What is logically wrong in returning a static object by reference?
+What are the rules regarding operator overloading? prec and assoc same old ops
+
+what are characteristics of a friend function? When do we use it?
+
+can a member of one class be a friend of another? yeah
+can a function be a friend of two different classes simultaneously? yeah
+
+
+what is sequence point? gaurenteed eval before
+what is the order of evaluation of operands in C++? in Java? donno, left to right
+How do we avoid order dependency in our expressions? sequence points
+
+write a template function to read into an array.
+Test it for int, double.
+
+Test it for Complex.
+Test it for Date.
+provide suitable functions in these classes.
+
+
+Write a function to add elements of an array of int.
+Make this function a template.
+Experiment with
+	array of double
+	array of Complex.
+provide suitable functions in this class.
+why should one prefer preincrement over postincrement? 2 obj, 4 calls
+What is the canonical form of writing postincrement operator? call pre
+How does the compiler distinguish between pre increment and post increment calls? int
+Why is postincrement a rvalue and preincrement a lvalue? temp value
+what is type conversion operator? Can we specify this as explicit?
+									
+Distinguish between constructor call and functor call. a()()
+Sort an array of Complex class based on magnitude of Complex number
+
+
+What are the differences between callback using pointer to function and
+	callback using a functor?
+	State the reasons for the differences. inline and state
+
+What is the reason we should declare the ctor of MyVector class as explicit?
+What happens if we do not do it?
+
+why do we use nested class?
+
+How do we hide a class? 
+How do we an object of a nested class?
+
+Which are the operators an iterator of accumulate should support?
+

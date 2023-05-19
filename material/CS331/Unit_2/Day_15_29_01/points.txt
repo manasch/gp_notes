@@ -1,0 +1,43 @@
+Generic Programming ; day 15 : 29th Jan 2021
+
+unit 2:
+concept of class:
+fundamental operators:
+	ctor
+	dtor
+	...
+	
+----------------
+
+empty string : ""
+null string : nullptr
+
+----------------
+// first phase : lexical analyzer 
+// follows regular expression
+// matches the string :
+//	leftmost
+//	eager
+//	greedy
+
+// single ctor with default values
+Person(char *= "", int = 0); //compile time errors
+// *= becomes a token 
+Person(char * = "", int = 0); // ok
+
+// <  < >> : used to be an error : 2003 TR1 : should not be an error
+
+//   a---b
+//		compile time error
+//		a-- - b 
+//		a - --b
+// ?
+
+// --1   NO
+// - -1  ok
+
+-------------------
+assignment
+
+
+

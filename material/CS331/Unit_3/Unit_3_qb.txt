@@ -1,0 +1,33 @@
+When is a template class instantiated? when explicit/implicit ctor
+When are the functions in a template class instantiated? along with class
+
+Instantiation of a template class requires specification of type. 
+Can we avoid that by writing a wrapper function while creating an object? yee
+
+What is the difference between typedef and using mechanisms in creating a typename? using itself can be template
+Why a template class cannot be instantiated by implicit instantiation?
+What are default template type parameters? How are they used?
+
+Consider the algorithms we used today. How could these algorithms be implemented?
+what will be the requirement template parameters?
+
+
+
+Should an algorithm depend on the most powerful iterator or the least powerful
+iterator? Why?
+What type of iterator should a container support?
+Why are the following functions implemented in the class?
+	sort on list
+	find on set and map : which are ht balanced binary search tree
+	
+What are predicates? How are they different from functors?
+How does sort compare the elements by default? How do we sort a sequence of
+	user defined objects?
+Can we overload template functions with the same # of arguments?
+Why find with predicate does not overload the algorithm find? all are template params
+
+How do generic find and find of set differ? tree
+Why we can not assign to the dereferenced iterator in set? tree mess
+How does indexing on a non-existing act in map? l or r
+How the use of predicate is diffent in find_if compared to set?
+

@@ -1,0 +1,5 @@
+How do generic find and find of set differ?
+Why we can not assign to the dereferenced iterator in set?
+How does indexing on a non-existing act in map?
+How the use of predicate is diffent in find_if compared to set?
+

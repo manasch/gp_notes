@@ -1,0 +1,43 @@
+- books :
+  C++ templates : Josutis
+  STL Tutorial and reference : Musser ...
+
+- functional programming
+  C : functional ? NO
+- C : object oriented ?
+  directly no
+  implement OO concepts as a design pattern in 'C'
+
+----------------------------------------------------
+Object Oriented concepts:
+Interface and implementation:
+Interface, once published, cannot be withdrawn
+withdrawing will break the existing code
+becomes a maintenance nightmare
+
+task: Scott Meyers : the most important design guideline
+- youtube
+
+1. Abstraction :
+	selecting what is essential
+	ignoring what is not essential
+	depends on the observer
+	
+	also give a name for it
+	
+2. encapsulation :
+	put things together
+	put attributes and behaviour together
+	
+	hide what could change
+	expose what should not change
+	
+	hide the implementation
+	expose the interface
+	
+	not a security concept
+	
+3. 
+	
+	
+

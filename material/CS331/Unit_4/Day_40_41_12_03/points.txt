@@ -1,0 +1,30 @@
+Generic Programming : day 40-41 : 12th March 2021
+so far,
+	STL
+	bind
+	lambda
+	
+------------------
+ISA 1 :
+Test 60 marks
+part 1 :
+	Writing into the computer itself
+	8 questions - each carries 5 marks : total 40
+	max 1 hour
+	function templates : 2 questions
+	class templates : 2 questions
+	iterators and functors : 2 questions
+	builtin containers : 2 questions
+	
+	be precise. Write short answers.
+	
+part 2 :
+	Write Two programs.
+	2 questions A and B- each 10 marks : total 20
+	
+	create a folder on a server - name : SRN - all lower cases
+	create folders A and B
+	copy your source code only to these folders.
+	
+	
+

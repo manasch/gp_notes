@@ -1,0 +1,13 @@
+what is true of operator functions?
+
+require no linking phase - compiler puts the code for operators
+compiler catches if a function called + does subtraction
+operator functions are runtime mechansim
+operator* can be overloaded based on arity
+
+which of the following is false?
+operator+ can take one or two operands
+operator++ prefix and postfix will have the same semantics
+operator() can be overloaded based on # of parameters
+operator functions can be free functions
+

@@ -1,0 +1,33 @@
+template<typename T1, typename T2>
+class A {
+	A(int, double);  
+};
+
+The right way to instantitate this class is
+
+A a(10, 2.5);
+A a<int, double>(10, 2.5);
+A<10, 2.5> a;
+A<int, double> a(10, 2.5);
+
+
+template<typename T1, typename T2>
+class A {
+	A(int, double);  
+};
+
+template<typename T1, typename T2>
+A<T1, T2> make_A(T1 t1, T2 t2)
+{
+	return _____;
+}
+
+This is a  wrapper function to make an object of type A.
+What should appear in the return statement?
+
+A<T1, T2>(t1, t2)
+A<t1, t2>(T1, T2)
+A(T1, T2)<t1, t2>
+A<t1, t2>(T1, T2>
+
+

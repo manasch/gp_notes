@@ -1,0 +1,25 @@
+template<typename T>
+void foo(T t);
+
+int a[10]; foo(a);
+What does T get instantiated to?
+
+int
+int*
+void*
+none of these
+
+------------
+
+template<typename A, typename B>
+void bar(A *x, B y);
+What types A and B get instantiated to?
+
+int a[10]; 
+bar(a, 10);
+
+A is int* and B is int
+A is int and B is int
+A is int and B is int*
+none of these
+

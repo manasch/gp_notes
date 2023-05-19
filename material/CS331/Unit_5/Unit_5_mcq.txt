@@ -1,0 +1,82 @@
+Box b = new Box();
+b.put(25);
+int x = b.get();
+
+class Box
+{
+	private Object o;
+	public Object get() { return o; }
+	public void put(Object o) { this.o = o; } 
+}
+Comment about the line : int x = b.get();
+
+x becomes 25
+x will refer to a location on the heap which is 25
+This statement generates a runtime error
+CCC None of these  
+
+----------
+
+class Box<T>
+{
+	private T o;
+	public T get() { return o; }
+	public void put(T o) { this.o = o; } 
+}
+
+		Box<String> s = new Box<String>();
+		s.put(25);
+		String s1 = s.get();
+		
+s1 becomes 25
+s.get() requires casting to string
+s.put(25); generates runtime error
+CCC s.put(25); generates compile time error		
+		
+
+Which of the following is true?
+
+CCC Comparable interface has a method compareTo which takes one argument
+Comparable interface has a method compareTo which takes two argument
+Comparable interface has a method compareTo which returns a boolean
+An object of a class implementing Comparable interface is passed as argument
+	to the sort function
+	
+Which of the following is true?
+myswap(a, b) can swap two variables if they are of value type
+myswap(a, b) can swap two variables if they are of reference type
+myswap(a, b) can swap two variables if they are objects of user defined type
+CCC myswap(a, b) can never swap the two variables
+
+
+class R
+{
+	public int zzz
+	{
+		get
+		{
+			return 1729;
+		}
+	}
+}
+Which of the following is correct?
+
+R.zzz
+R().zzz
+CCC new R().zzz
+new R.zzz()
+
+----------------------
+
+delegate void fnptr_t()
+This implies that
+
+fnptr_t is callable
+fn_ptr_t() is callable
+fn_ptr_t f;  f is callable
+CCC static void f() { } ; fn_ptr_t f = new fn_ptr_t(f); f is callable
+
+
+
+
+

@@ -1,0 +1,31 @@
+class Complex
+{
+	public:
+	Complex(double = 0.0, double);
+	// ...
+};
+
+compile time error in declaration
+runtime time error if one argument is passed
+works fine - takes the argument passed as the 2nd parameter
+none of these
+
+
+class Complex
+{
+	public:
+	Complex(double = 0.0, double);
+	void disp() const;
+	// ...
+};
+
+void Complex::disp() definition can have the following statement.
+
+Complex z; this = &z;
+this->rp_ = 100;
+Complex z; z.rp_ = 200;
+Complex z(this);
+
+
+
+

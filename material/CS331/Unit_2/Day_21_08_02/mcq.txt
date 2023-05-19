@@ -1,0 +1,39 @@
+template<typename ptr_t>
+void what(ptr_t first, ptr_t last)
+{
+	cout << first << " " << last << "\n";
+}
+
+Date d[5] = { ... };
+what(d, d + 5);
+
+for this function to compile,
+
+class Date should overload << on date type
+class Date should overload << on pointer to date type
+class Date should write its own copy ctor
+none of these
+
+------------------
+
+template<typename ptr_t>
+ptr_t what(ptr_t first)
+{
+	return ++first;
+}
+Date d[5] = { ... };
+what(d);
+
+for this compile, 
+class Date should overload pre_increment
+class Date should overload both pre_increment & post_increment
+class Date should overload copy ctor
+class Date need not support any special operator
+
+
+
+
+
+
+
+

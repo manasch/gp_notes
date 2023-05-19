@@ -1,0 +1,5 @@
+Consider the algorithms we used today. How could these algorithms be implemented?
+what will be the requirement template parameters?
+
+
+

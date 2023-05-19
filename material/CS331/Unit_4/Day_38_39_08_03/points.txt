@@ -1,0 +1,15 @@
+Generic Programming : day 38-39 : 8th March 2021
+so far,
+	STL philosophy
+	containers
+	iterators
+	algorithms
+	predicate as expr
+	predicate as type
+---------------------------------------
+
+bind with overloading
+	https://isocpp.org/blog/2018/06/quick-q-stdbind-overload-resolution
+= : capture : value or const reference
+function<int(*)(int, int)> why not this?
+

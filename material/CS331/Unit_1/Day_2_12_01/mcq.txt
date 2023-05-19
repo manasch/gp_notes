@@ -1,0 +1,13 @@
+An abstraction of a cheque
+
+should contain payee's name
+should contain a place to put payee's name
+depends on the observer
+none of these
+
+size of an object is influened by
+
+sizes of bodies of functions
+# of functions - will have one pointer per function
+only attributes of the class
+none of these

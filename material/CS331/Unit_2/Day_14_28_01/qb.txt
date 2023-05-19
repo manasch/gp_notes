@@ -1,0 +1,7 @@
+what is wrong with the following code?
+Person(char *= "", int = 0); // ECE students may ignore this
+
+Does the destructor remove memory allocated to an object?
+
+Why is ctor always called when an object is initialized?
+

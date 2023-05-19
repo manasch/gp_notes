@@ -1,0 +1,5 @@
+what is return object optimization?
+How do we call a ctor explicity? in such a case, does the compiler create an object?
+What is logically wrong in returning a static object by reference?
+What are the rules regarding operator overloading?
+

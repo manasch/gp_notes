@@ -1,0 +1,28 @@
+1. create a class MyVector.
+   It should have 
+   int n_;
+   int* p_;
+   In the constructor, allocate a block of n int to p.
+   Provide ctors, dtor, assignment op and copy constructor.
+   Write functions to add vectors.
+   
+2. create a class MyMatrix.
+	It shold have
+	int m_;
+	int n_;
+	int *p_;
+   In the constructor, allocate a block of m X n int to p.
+   Provide ctors, dtor, assignment op and copy constructor.
+   Write functions to add matrices.	
+Implement a list class. Implement iterator with in.
+- make acc work with this class.
+
+Implement the following functions.
+- accumulate (reduce elements to a single element between a pair of iterators)
+- find a position between a pair of iterators - compare for equality
+- find the position of an element greater than a given element between
+	a pair of iterators
+- copy elements between a pair of iterators to another container
+
+Try for both the vector and the list.
+

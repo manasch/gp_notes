@@ -1,0 +1,4 @@
+what is the role of functor in adjacent difference?
+What is the difference between erase of vector and algorithm remove?
+How could one write the algorithm remove?
+

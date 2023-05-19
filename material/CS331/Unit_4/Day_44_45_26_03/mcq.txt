@@ -1,0 +1,14 @@
+Finding mid point in vector 
+
+has to be a linear algorithm
+can be const time
+is logarithmic
+none of these
+
+Finding distance between two iterators is
+
+linear in list iterators and linear in vector iterators
+linear in list iterators and const time in vector iterators
+const time in list iterators and const time in vector iterators
+none of these
+

@@ -1,0 +1,18 @@
+void foo()
+{
+	cout << "foo called\n";
+}
+
+	void (*p)();
+	p = foo;
+	p();
+This call to the function thro' the pointer is normally a runtime mechanism.
+Can the compiler optimize to make this a compile time mechanism?
+What if p is declared volatile?
+
+------------------
+
+
+
+	
+
